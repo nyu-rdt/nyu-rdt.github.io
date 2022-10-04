@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --active-color: #E0AAFF
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    /* overflow-x: hidden; */
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+.active {
+    color: var(--active-color) !important
+}
+
+.bg-pattern {
+    background-image: url(./pattern.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg-space-1 {
+    background: url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
+}
+
+.bg-space-2 {
+    background:url(https://cdn.wallpapersafari.com/6/24/6v4nA9.jpg);
+}
+
+.bg-space-3 {
+    background: url(https://wallpaperaccess.com/full/21519.jpg);
+}
+
+.bg-nasa-website {
+    background: url(./resources/nasa-bg.png);
+}
+
+.bg-darkviolet {
+    background-color: #240046 !important;
+}
+
+.color-purple {
+    overflow: none;
+    color: #e0aaff;
+}
+
+.icon {
+    max-width: 2.5rem;
+    margin-inline: 1rem;
+}
+
+.location {
+    max-width: 16rem;
+    aspect-ratio: 1/1;
+    margin: 6vmin;
+    border: rgb(31, 31, 31) 3px solid;
+    border-radius: 5%;
+}
+
+.application {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 9rem;
+    aspect-ratio: 3/1;
+
+    font-size: 1.5rem;
+
+    margin: 1vmin;
+    border: solid 1px black;
+    border-radius: 1vmin;
+
+    background-color: #9d4edd;
+}
+
+.application:hover {
+    background-color: #b66ef1;
+}
+
+footer {
+    padding: 16px;
+    font-size: 0.75rem;
+}
