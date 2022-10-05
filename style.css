@@ -1,0 +1,26 @@
+.bg-pattern {
+    background-image: url(./resources/pattern.png);
+    background-size: cover;
+}
+
+.bg-space {
+    background-image: url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
+    background-size: cover;
+    background-position: initial;
+}
+
+.bg-darkviolet {
+    background-color: #240046;
+}
+
+.bar-item {
+    margin-left: 3em;
+    margin-left: 3em;
+}
+
+.main-img {
+    max-width: 50vw;
+    max-height: 20vw;
+    margin: 4em;
+    border: 3px solid #240046
+}
