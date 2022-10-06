@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
 .bg-pattern {
     background-image: url(./resources/pattern.png);
     background-size: cover;
@@ -14,13 +21,17 @@
 }
 
 .bar-item {
-    margin-left: 3em;
-    margin-left: 3em;
+    padding-left: 3vmin;
+    padding-right: 3vmin;
+}
+
+.intro {
+    margin-block: 1vmin;
 }
 
 .main-img {
-    max-width: 50vw;
-    max-height: 20vw;
-    margin: 4em;
+    max-width: 60vmax;
+    max-height: 25vmax;
+    margin: 2em;
     border: 3px solid #240046
 }
