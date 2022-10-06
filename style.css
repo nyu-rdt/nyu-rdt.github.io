@@ -38,10 +38,29 @@
     border-radius: 2vmin 10vmin;
 }
 
-.clipped-space {
-    height: 20vmax;
-    clip-path: polygon(0% 70%, 100% 10%, 100% 100%, 0 100%);
+.space-info {
     background:url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    font-size: 10vmin;
+    height: 18vmax;
+}
+
+.space-right {
+    shape-outside: polygon(0% 55%, 100% 0%, 100% 100%, 0 100%);
+    clip-path: polygon(0% 55%, 100% 0%, 100% 100%, 0 100%);
+    justify-content: right;
+}
+
+.space-left {
+    shape-outside: polygon(100% 0%, 0% 55%, 100% 100%, 0 100%);
+    clip-path: polygon(0% 0%, 100% 55%, 100% 100%, 0 100%);
+    justify-content: left;
+}
+
+.space-center {
+    height: 14vmax;
+    justify-content: center;
 }
