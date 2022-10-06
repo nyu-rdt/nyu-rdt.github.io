@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
 .bg-pattern {
     background-image: url(./resources/pattern.png);
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .bg-space {
@@ -14,13 +22,26 @@
 }
 
 .bar-item {
-    margin-left: 3em;
-    margin-left: 3em;
+    padding-left: 3vmin;
+    padding-right: 3vmin;
+}
+
+.intro {
+    margin-block: 1vmin;
 }
 
 .main-img {
-    max-width: 50vw;
-    max-height: 20vw;
-    margin: 4em;
-    border: 3px solid #240046
+    max-width: 60vmax;
+    max-height: 25vmax;
+    margin: 2em;
+    border: 4vmin solid #240046;
+    border-radius: 2vmin 10vmin;
+}
+
+.clipped-space {
+    height: 20vmax;
+    clip-path: polygon(0% 70%, 100% 10%, 100% 100%, 0 100%);
+    background:url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
