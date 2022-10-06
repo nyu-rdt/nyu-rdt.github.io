@@ -8,6 +8,7 @@
 .bg-pattern {
     background-image: url(./resources/pattern.png);
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .bg-space {
@@ -33,5 +34,14 @@
     max-width: 60vmax;
     max-height: 25vmax;
     margin: 2em;
-    border: 3px solid #240046
+    border: 4vmin solid #240046;
+    border-radius: 2vmin 10vmin;
+}
+
+.clipped-space {
+    height: 20vmax;
+    clip-path: polygon(0% 70%, 100% 10%, 100% 100%, 0 100%);
+    background:url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
