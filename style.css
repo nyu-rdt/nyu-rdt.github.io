@@ -84,6 +84,25 @@
     font-size: 1.5vmax;
 }
 
+.skill-box {
+    width: 25vmax;
+    background-color: black;
+    margin: 3vmin;
+    font-size: 3vmax;
+}
+
+.skill-comp {
+    font-size: 3vmax;
+    padding: 2vmax;
+    background-color: #20003D;
+}
+
+.skill-set {
+    font-size: 1.4vmax;
+    padding: 1.5vmax;
+    background-color: #10002B;
+}
+
 .page-bottom {
     background-color:#14032e;
     height: 20vmin;
