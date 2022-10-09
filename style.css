@@ -11,14 +11,22 @@
     background-attachment: fixed;
 }
 
-.bg-space {
+.bg-space-1 {
     background-image: url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
-    background-size: cover;
-    background-position: initial;
+}
+
+
+.bg-space-2 {
+    background:url(https://cdn.wallpapersafari.com/6/24/6v4nA9.jpg);
 }
 
 .bg-darkviolet {
     background-color: #240046;
+}
+
+.page-top {
+    background-size: cover;
+    background-position: initial;
 }
 
 .bar-item {
@@ -34,18 +42,17 @@
     max-width: 60vmax;
     max-height: 25vmax;
     margin: 2em;
-    border: 4vmin solid #240046;
+    border: 2vmin solid black;
     border-radius: 2vmin 10vmin;
 }
 
 .space-info {
-    background:url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
     background-attachment: fixed;
     background-size: cover;
     display: flex;
     align-items: flex-end;
-    font-size: 10vmin;
-    height: 18vmax;
+    font-size: 6vmin;
+    height: 10vmax;
 }
 
 .space-right {
@@ -61,6 +68,52 @@
 }
 
 .space-center {
-    height: 14vmax;
+    height: 8vmax;
     justify-content: center;
+}
+
+.info-split {
+    max-width: 40vmax;
+    margin: 5vmin;
+    font-size: 1.5vmax;
+}
+
+.info {
+    max-width: 80vmax;
+    margin: 5vmin;
+    font-size: 1.5vmax;
+}
+
+.skill-box {
+    width: 25vmax;
+    background-color: black;
+    margin: 3vmin;
+    font-size: 3vmax;
+}
+
+.skill-comp {
+    font-size: 3vmax;
+    padding: 2vmax;
+    background-color: #20003D;
+}
+
+.skill-set {
+    font-size: 1.4vmax;
+    padding: 1.5vmax;
+    background-color: #10002B;
+}
+
+.page-bottom {
+    background-color:#14032e;
+    height: 20vmin;
+    font-size: 0.75vmax;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+}
+
+.bottom-logo {
+    max-height: 10vmin;
+    margin: 3vmin;
 }

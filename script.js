@@ -1,5 +1,5 @@
 var i = 0;
-var word = 'Mission: Build a functioning robot for once.';
+var word = 'ission: Build a functioning robot for once.'; // the first character will be in the html file
 var $textBox = $('.intro');
 console.log($textBox);
 
@@ -10,4 +10,4 @@ const typeWord = () => {
     if(i < word.length) setTimeout(typeWord, 30);
 }
 
-setTimeout(typeWord, 500);
+setTimeout(typeWord, 100);
