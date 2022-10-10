@@ -15,9 +15,12 @@
     background-image: url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
 }
 
-
 .bg-space-2 {
     background:url(https://cdn.wallpapersafari.com/6/24/6v4nA9.jpg);
+}
+
+.bg-space-3 {
+    background: url(https://wallpaperaccess.com/full/21519.jpg);
 }
 
 .bg-darkviolet {
@@ -53,6 +56,15 @@
     align-items: flex-end;
     font-size: 6vmin;
     height: 10vmax;
+}
+
+.space-year {
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    font-size: 5vmax;
+    height: 8vmax;
 }
 
 .space-right {
@@ -116,4 +128,37 @@
 .bottom-logo {
     max-height: 10vmin;
     margin: 3vmin;
+}
+
+.video {
+    width: 40vmax;
+    height: 22.5vmax;
+    margin: 4vmin;
+}
+
+.button {
+    width: 30vmax;
+    height: 9vmax;
+    display:flex;
+    align-items: center;
+    padding: 2vmin;
+
+    margin: 4vmin;
+    font-size: 2.5vmax;
+
+    background-color: #212529;
+
+    border-radius: 0 3vmax 0 3vmax;
+
+    border: 1px solid black;
+    color:#CED4DA;
+
+    transition: background-color 200ms;
+    transition: color 200ms;
+}
+
+.button:hover {
+    background-color: #2E3338;
+    border-color: #495057;
+    color: white;
 }
