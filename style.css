@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+:root {
+    --active-color: #E0AAFF
+}
+
+
 * {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+}
+
+.active {
+    color: var(--active-color) !important
 }
 
 .bg-pattern {
@@ -35,6 +44,10 @@
 .bar-item {
     padding-left: 3vmin;
     padding-right: 3vmin;
+}
+
+.bar-item > .text-white:hover {
+    color:var(--active-color) !important
 }
 
 .intro {
@@ -137,6 +150,8 @@
 }
 
 .button {
+    overflow-y: hidden;
+
     width: 30vmax;
     height: 9vmax;
     display:flex;
@@ -144,7 +159,7 @@
     padding: 2vmin;
 
     margin: 4vmin;
-    font-size: 2.5vmax;
+    font-size: 2vmax;
 
     background-color: #212529;
 
