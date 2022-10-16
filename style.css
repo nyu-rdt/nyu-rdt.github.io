@@ -212,6 +212,11 @@
 
     font-style: italic;
     color: rgb(190, 56, 56);
+
+    margin: 0;
+    padding-top: 5vmin;
+
+    overflow-y: hidden;
 }
 
 .recruitment-status > h1 {
@@ -220,4 +225,44 @@
 
 .recruitment-status > h2 {
     font-size: 3.5vmin;
+}
+
+.location {
+    width: 40vmin;
+    height: 40vmin;
+    margin: 6vmin;
+    border: rgb(31, 31, 31) 3px solid;
+    border-radius: 5%;
+}
+
+.contact-bar {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.socials img {
+    width: 8vmin;
+    height: 8vmin;
+    margin-block: 5vmin;
+    margin-right: 5vmin;
+}
+
+.socials h2 {
+    font-size: 3.5vmin;
+}
+
+.hoverable {
+    transition: color 200ms;
+}
+
+.hoverable:hover {
+    color:var(--active-color) !important
 }
