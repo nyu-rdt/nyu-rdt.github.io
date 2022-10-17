@@ -76,8 +76,10 @@
     background-size: cover;
     display: flex;
     align-items: flex-end;
-    font-size: 5vmax;
-    height: 8vmax;
+    font-size: 4vmax;
+    height: 7vmax;
+    margin: 2vmax;
+    border-block: rgb(0, 11, 58) 1px solid;
 }
 
 .space-right {
@@ -110,20 +112,20 @@
 }
 
 .skill-box {
-    width: 25vmax;
+    width: 23vmax;
     background-color: black;
     margin: 3vmin;
     font-size: 3vmax;
 }
 
 .skill-comp {
-    font-size: 3vmax;
+    font-size: 2vmax;
     padding: 2vmax;
     background-color: #20003D;
 }
 
 .skill-set {
-    font-size: 1.4vmax;
+    font-size: 1.2vmax;
     padding: 1.5vmax;
     background-color: #10002B;
 }
@@ -176,4 +178,91 @@
     background-color: #2E3338;
     border-color: #495057;
     color: white;
+}
+
+.contact-heading {
+
+    background-attachment: fixed;
+
+    height: 15vmin;
+    overflow-y: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+
+    border-block: rgb(63, 63, 63) 1px solid;
+}
+
+.contact-heading > h1 {
+    font-size: 6vmin;
+    margin-left: 4vmin;
+}
+
+.contact-heading > h2 {
+    font-size: 3vmin;
+    margin-left: 4vmin;
+}
+
+.recruitment-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-style: italic;
+    color: rgb(190, 56, 56);
+
+    margin: 0;
+    padding-top: 5vmin;
+
+    overflow-y: hidden;
+}
+
+.recruitment-status > h1 {
+    font-size: 4.5vmin;
+}
+
+.recruitment-status > h2 {
+    font-size: 3.5vmin;
+}
+
+.location {
+    width: 40vmin;
+    height: 40vmin;
+    margin: 6vmin;
+    border: rgb(31, 31, 31) 3px solid;
+    border-radius: 5%;
+}
+
+.contact-bar {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.socials img {
+    width: 8vmin;
+    height: 8vmin;
+    margin-block: 5vmin;
+    margin-right: 5vmin;
+}
+
+.socials h2 {
+    font-size: 3.5vmin;
+}
+
+.hoverable {
+    transition: color 200ms;
+}
+
+.hoverable:hover {
+    color:var(--active-color) !important
 }
