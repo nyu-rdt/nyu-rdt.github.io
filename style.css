@@ -4,11 +4,16 @@
     --active-color: #E0AAFF
 }
 
-
 * {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
+
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
 
 .active {
     color: var(--active-color) !important
@@ -21,7 +26,7 @@
 }
 
 .bg-space-1 {
-    background-image: url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
+    background: url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
 }
 
 .bg-space-2 {
@@ -30,6 +35,10 @@
 
 .bg-space-3 {
     background: url(https://wallpaperaccess.com/full/21519.jpg);
+}
+
+.bg-nasa-website {
+    background: url(./resources/nasa-bg.png);
 }
 
 .bg-darkviolet {
@@ -42,12 +51,7 @@
 }
 
 .bar-item {
-    padding-left: 3vmin;
-    padding-right: 3vmin;
-}
-
-.bar-item > .text-white:hover {
-    color:var(--active-color) !important
+    margin-inline:2vmin;
 }
 
 .intro {
@@ -55,79 +59,95 @@
 }
 
 .main-img {
-    max-width: 60vmax;
-    max-height: 25vmax;
+    max-width: 40vmax;
+    max-height: 22.5vmax;
     margin: 2em;
     border: 2vmin solid black;
     border-radius: 2vmin 10vmin;
 }
 
-.space-info {
+.header {
     background-attachment: fixed;
     background-size: cover;
     display: flex;
     align-items: flex-end;
-    font-size: 6vmin;
+    font-size: 7vmin;
     height: 10vmax;
 }
 
-.space-year {
-    background-attachment: fixed;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
-    font-size: 4vmax;
-    height: 7vmax;
-    margin: 2vmax;
-    border-block: rgb(0, 11, 58) 1px solid;
-}
-
-.space-right {
+.header-clip-right {
     shape-outside: polygon(0% 55%, 100% 0%, 100% 100%, 0 100%);
     clip-path: polygon(0% 55%, 100% 0%, 100% 100%, 0 100%);
     justify-content: right;
 }
 
-.space-left {
+.header-clip-left {
     shape-outside: polygon(100% 0%, 0% 55%, 100% 100%, 0 100%);
     clip-path: polygon(0% 0%, 100% 55%, 100% 100%, 0 100%);
     justify-content: left;
 }
 
-.space-center {
+.header-center {
     height: 8vmax;
     justify-content: center;
 }
 
-.info-split {
-    max-width: 40vmax;
-    margin: 5vmin;
-    font-size: 1.5vmax;
+.header-center-sm {
+    height: 6vmax;
+    justify-content: center;
 }
 
 .info {
-    max-width: 80vmax;
-    margin: 5vmin;
+    max-width: 40vmax;
     font-size: 1.5vmax;
 }
 
-.skill-box {
-    width: 23vmax;
-    background-color: black;
+.rdt-logo {
+    width: 40vmax;
+    height: 16vmax;
+}
+
+.rdt-logo-small {
+    width: 30vmin;
+    height: 12vmin;
+    margin: 3vmin;
+
+    background-image: url(./resources/rdt-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.vip-logo {
+    width: 25vmax;
+    height: 16vmax;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills div {
+    width: 25vmax;
     margin: 3vmin;
     font-size: 3vmax;
 }
 
-.skill-comp {
+.skills h1 {
     font-size: 2vmax;
     padding: 2vmax;
     background-color: #20003D;
+
+    margin-block: 0;
 }
 
-.skill-set {
+.skills p {
     font-size: 1.2vmax;
     padding: 1.5vmax;
     background-color: #10002B;
+
+    margin-block: 0;
 }
 
 .page-bottom {
@@ -137,7 +157,6 @@
     display: flex;
     align-items: center;
     justify-content: left;
-
 }
 
 .bottom-logo {
@@ -153,25 +172,32 @@
 
 .button {
     overflow-y: hidden;
-
-    width: 30vmax;
-    height: 9vmax;
-    display:flex;
+    display: flex;
     align-items: center;
-    padding: 2vmin;
-
-    margin: 4vmin;
-    font-size: 2vmax;
 
     background-color: #212529;
-
-    border-radius: 0 3vmax 0 3vmax;
-
     border: 1px solid black;
     color:#CED4DA;
-
     transition: background-color 200ms;
     transition: color 200ms;
+}
+
+.b-medium {
+    width: 30vmax;
+    height: 9vmax;
+    padding: 2vmin;
+    margin: 4vmin;
+    font-size: 2vmax;
+    border-radius: 0 3vmax 0 3vmax;
+}
+
+.b-large {
+    width: 50vmax;
+    height: 10vmax;
+    padding: 2vmin;
+    margin: 4vmin;
+    font-size: 2.5vmax;
+    border-radius: 0 5vmax 0 5vmax; 
 }
 
 .button:hover {
@@ -181,7 +207,6 @@
 }
 
 .contact-heading {
-
     background-attachment: fixed;
 
     height: 15vmin;
@@ -206,6 +231,8 @@
 }
 
 .recruitment-status {
+    overflow-y: hidden;
+
     display: flex;
     flex-direction: column;
     align-items: center;
