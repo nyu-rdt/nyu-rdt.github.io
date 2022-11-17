@@ -293,3 +293,38 @@ a:active { text-decoration: none; }
 .hoverable:hover {
     color:var(--active-color) !important
 }
+
+.nasa-logo {
+    width: 50vmin;
+    height: 40vmin;
+}
+
+.lunabotics-logo {
+    width: 40vmin;
+    height: 40vmin;
+}
+
+.comp-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-inline: 5vmin;
+}
+
+.comp-info h1 {
+    font-size: 2vmax;
+}
+
+.comp-info p {
+    width: 90vmin;
+    font-size: 1.2vmax;  
+}
+
+.comp-video {
+    width: 64vmax;
+    height: 36vmax;
+    margin-top: 4vmin;
+    border: 3px #14032e solid
+}
