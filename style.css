@@ -293,3 +293,24 @@ a:active { text-decoration: none; }
 .hoverable:hover {
     color:var(--active-color) !important
 }
+
+.comp-logo {
+    width: 50vmin;
+    height: 40vmin;
+}
+
+.comp-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.comp-info h1 {
+    font-display: 5vmin;
+}
+
+.comp-info p {
+    width:70vmin;
+    font-size: 3vmin;  
+}
