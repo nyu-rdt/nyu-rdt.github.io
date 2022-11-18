@@ -9,7 +9,6 @@
     overflow-x: hidden;
 }
 
-
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
@@ -327,4 +326,68 @@ a:active { text-decoration: none; }
     height: 36vmax;
     margin-top: 4vmin;
     border: 3px #14032e solid
+}
+
+.upcoming-event {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.upcoming-event img{
+    width: 25vmin;
+    height: 25vmin;
+    margin: 2vmin;
+}
+
+.upcoming-event .details {
+    width: 90vmin;
+    display: flex;
+    flex-direction: column;
+    margin: 4vmin;
+    justify-content: center;
+}
+
+.event-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.event-title h1 {
+    font-size: 2vmax;
+    margin-right: 2vmin;
+}
+
+.event-title h2 {
+    font-size: 1.5vmax;
+}
+
+.upcoming-event .details > p {
+    font-size: 1.5vmax;
+}
+
+.past-event-list {
+    display: flex;
+    flex-direction: column;
+
+    width: 40vmax;
+
+    margin: 4vmin;
+
+}
+
+.past-event-list h1 {
+    padding: 1vmin;
+    background-color: #240046;
+    font-size: 2.5vmax;
+
+    overflow: hidden;
+}
+.past-event-list p {
+    background-color: #212529;
+    font-size: 1.5vmax;
+
+    overflow: hidden;
+    margin: 0.5vmin;
 }
