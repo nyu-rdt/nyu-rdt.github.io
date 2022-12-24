@@ -41,7 +41,16 @@ a:active { text-decoration: none; }
 }
 
 .bg-darkviolet {
-    background-color: #240046;
+    background-color: #240046 !important;
+}
+
+.color-red {
+    color: rgb(190, 56, 56);
+}
+
+.color-purple {
+    overflow: none;
+    color: #e0aaff;
 }
 
 .page-top {
@@ -229,20 +238,20 @@ a:active { text-decoration: none; }
     margin-left: 4vmin;
 }
 
+
 .recruitment-status {
     overflow-y: hidden;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    font-style: italic;
-    color: rgb(190, 56, 56);
-
+    
     margin: 0;
     padding-top: 5vmin;
 
     overflow-y: hidden;
+
+    text-align: center;
 }
 
 .recruitment-status > h1 {
@@ -275,10 +284,10 @@ a:active { text-decoration: none; }
 }
 
 .socials img {
-    width: 8vmin;
-    height: 8vmin;
+    max-width: 8vmin;
     margin-block: 5vmin;
     margin-right: 5vmin;
+    margin: 2.4vmin;
 }
 
 .socials h2 {
@@ -384,6 +393,7 @@ a:active { text-decoration: none; }
 
     overflow: hidden;
 }
+
 .past-event-list p {
     background-color: #212529;
     font-size: 1.5vmax;
@@ -391,3 +401,59 @@ a:active { text-decoration: none; }
     overflow: hidden;
     margin: 0.5vmin;
 }
+
+.profile {
+    width: 20vmax;
+    border: solid 2px black;
+    margin-inline: 8vmin;
+}
+
+.competency-profiles {
+    display: flex;
+    justify-content: space-evenly;
+    margin-block: 2vmin;
+    flex-wrap: wrap;
+}
+
+.competency-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vmin;
+}
+
+.competency-cards > h1 {
+    background-color: #10002B;
+    padding-inline: 10vmin;
+    padding-block: 2vmin;
+}
+
+.competency-cards > * {
+    margin: 1.5vmin;
+}
+
+.card-body > h3 {
+    font-size: 3vmin;
+}
+
+.application {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 24vmin;
+    height: 8vmin;
+
+    font-size: 4vmin;
+
+    margin: 1vmin;
+    border: solid 1px black;
+    border-radius: 1vmin;
+
+    background-color: #9d4edd;
+}
+
+.application:hover {
+    background-color: #b66ef1;
+}
+
