@@ -67,10 +67,10 @@ a:active { text-decoration: none; }
     justify-content: center;
     align-items: center;
 
-    width: 24vmin;
-    height: 8vmin;
+    width: 9rem;
+    aspect-ratio: 3/1;
 
-    font-size: 4vmin;
+    font-size: 1.5rem;
 
     margin: 1vmin;
     border: solid 1px black;
