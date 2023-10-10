@@ -1,89 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-:root {
-    --active-color: #E0AAFF
+body, html {
+    overflow-x: hidden;
 }
 
-* {
-    font-family: 'Montserrat', sans-serif;
-    /* overflow-x: hidden; */
+a {
+    text-decoration: none;
 }
 
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
-
-.active {
-    color: var(--active-color) !important
+a:visited {
+    text-decoration: none;
 }
 
-.bg-pattern {
-    background-image: url(./pattern.png);
-    background-size: cover;
-    background-attachment: fixed;
+a:hover {
+    text-decoration: none;
 }
 
-.bg-space-1 {
-    background: url(http://wallpaperset.com/w/full/9/6/a/517453.jpg);
+a::after {
+    text-decoration: none;
 }
 
-.bg-space-2 {
-    background:url(https://cdn.wallpapersafari.com/6/24/6v4nA9.jpg);
+.bar-item {
+    color: black;
+    padding: 10px;
+    padding-inline: 20px;
+    border-radius: 3px;
+
+    transition: color, background-color 200ms;
 }
 
-.bg-space-3 {
-    background: url(https://wallpaperaccess.com/full/21519.jpg);
+.bar-item:hover {
+    color: white;
+    background-color: rgb(71, 12, 71);
 }
 
-.bg-nasa-website {
-    background: url(./resources/nasa-bg.png);
+.apply-button {
+    color: white;
+    padding: 10px;
+    padding-inline: 30px;
+    border-radius: 3px;
+    border: 1px solid black;
+
+    background-color: rgb(126, 49, 126);
+
+    transition: color, background-color 200ms;
 }
 
-.bg-darkviolet {
-    background-color: #240046 !important;
+.apply-button:hover {
+    color: black;
+    background-color: rgb(255, 181, 255);
 }
 
-.color-purple {
-    overflow: none;
-    color: #e0aaff;
+.info-card {
+    border-radius: 3px;
+    min-width: 20rem;
+    width: 23%;
+    aspect-ratio: 1 / 1;
+    margin: 3%;
+    margin-block: 5%;
+    overflow: hidden;
+    position: relative;
 }
 
-.icon {
-    max-width: 2.5rem;
-    margin-inline: 1rem;
+.info-card:hover * {
+    opacity: 1;
+    transform: scale(1.1);
+    background-blend-mode: soft-light;
 }
 
-.location {
-    max-width: 16rem;
-    aspect-ratio: 1/1;
-    margin: 6vmin;
-    border: rgb(31, 31, 31) 3px solid;
-    border-radius: 5%;
+.info-card:hover .info {
+    transform: translateY(1000);
 }
 
-.application {
+.info {
+    position: absolute; 
+    top: 0;
+    left: 0;
+
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
-    width: 9rem;
-    aspect-ratio: 3/1;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    opacity: 0;
+    font-size: 3.2rem;
 
-    font-size: 1.5rem;
-
-    margin: 1vmin;
-    border: solid 1px black;
-    border-radius: 1vmin;
-
-    background-color: #9d4edd;
+    transition: all 0.5s;
 }
 
-.application:hover {
-    background-color: #b66ef1;
+.bg-robot-2 {
+    width: 100%;
+    height: 100%;
+    background: url("/resources/Slide1.jpg");
+    background-position: 80%;
+    background-color: rgba(0, 0, 0, 0.329);
+    background-size: cover;
+
+    transition: all 0.5s;
 }
 
-footer {
-    padding: 16px;
-    font-size: 0.75rem;
+.bg-robot-1 {
+    background: url("/resources/Slide3.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-y: bottom;
+}
+
+.bg-team {
+    width: 100%;
+    height: 100%;
+    background: url("/resources/Slide2.jpg");
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.329);
+    background-size: cover;
+
+    transition: all 0.5s;
+}
+
+.bg-pit {
+    width: 100%;
+    height: 100%;
+    background: url("/resources/Slide4.jpg");
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.329);
+    background-size: cover;
+
+    transition: all 0.5s;
+}
+
+
+.bg-black {
+    background-color: black;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: rgb(82, 54, 83);
 }

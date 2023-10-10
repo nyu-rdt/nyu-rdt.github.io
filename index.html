@@ -1,75 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>  
+    <head>
+
         <title>NYU RDT</title>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="script.js" defer></script>
-        
     </head>
-    <body class="bg-pattern">
-        <div class="container-fluid p-3 bg-space-1 page-top text-white text-center">
-            <h6>New York University's</h6>
-            <h1>ROBOTIC DESIGN TEAM</h1>
-        </div>
-        
-        <div class="d-flex flex-column align-items-center justify-content-center">
 
-            <div style="padding: 10px" class="container recruitment-status color-purple d-flex flex-column justify-content-center align-items-center">
-                <h2>We are recruiting!</h2>
-                <a href="https://nyu.qualtrics.com/jfe/form/SV_aYiVtVXWzCvvGn4">
-                  <div class="application text-white bg-purple">APPLY</div>
-                </a>
-            </div>
+<body class="d-flex-row align-items-center justify-content-center" style="background-color:rgb(255, 255, 255);">
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap " style="min-height: 3rem; padding: 15px;">
+        <img src="resources/rdt-logo-black.png" style="max-width: 13%; margin-inline: 5%;">
+        <nav class="d-flex justify-content-center flex-wrap" style="font-size: 1.5rem; margin-inline: 5%;">
+            <a class="bar-item" href="#">Home</a>
+            <a class="bar-item" href="#">About</a>
+            <a class="bar-item" href="#">Contact</a>
+            <a class="apply-button" style="margin-inline: 3rem" href="#">Apply</a>
+        </nav>
+    </div>
 
-            <div style="padding:20px" class="container-fluid d-flex-column justify-content-center">
-                <div class="d-flex align-items-center justify-content-center">
-                <img class="icon" src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-18/email-142.png">
-                <h2 class="text-white hoverable"> eng-rdt@nyu.edu </h2>
-                </div>   
-            </div>
-    
-            <a href="https://www.instagram.com/nyurdt/?hl=en">
-            <div style="padding:20px" class="d-flex align-items-center justify-content-center">
-                <img class="icon" src="https://i0.wp.com/beckydrexler.com/wp-content/uploads/2017/09/instagram-logo-white.png?fit=1000%2C1000&ssl=1">
-                <h2 class="text-white hoverable"> @nyurdt </h2>
-            </div>
-            </a>
-    
-            <a href="https://www.youtube.com/channel/UCUFm0GK_TLu0pCk0Qw8paoA">
-            <div style="padding:20px" class="d-flex align-items-center justify-content-center">
-                <img class="icon" src="https://toppng.com/uploads/thumbnail//youtube-logo-png-white-11618670025q4xui0s7ah.png">
-                <h2 class="text-white hoverable"> NYU RDT </h2>
-            </div>
-            </a>
-    
-            <a href="https://www.facebook.com/nyurdt/">
-            <div style="padding:20px" class="d-flex align-items-center justify-content-center">
-                <img class="icon" src="https://www.seekpng.com/png/full/18-185630_fb-white-round-icon-reverse-circle-facebook-white.png">
-                <h2 class="text-white hoverable"> NYU RDT </h2>
-            </div>
-            </a>
-    
-    
-            <a href="https://www.linkedin.com/company/nyu-robotic-design-team/">
-            <div style="padding:20px" class="d-flex align-items-center justify-content-center">
-                <img class="icon" src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/linkedin-icon-18-256.png">
-                <h2 class="text-white hoverable"> NYU RDT </h2>
-            </div>
-            </a>
-    
-            <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.0778373071917!2d-73.98868678434488!3d40.69428334663561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a4a51dc8c4b%3A0xe5bc1782d81f24d7!2s6%20MetroTech%20Center%2C%20Brooklyn%2C%20NY%2011201!5e0!3m2!1sen!2sus!4v1665904761622!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
-        </div>
-        
-        <footer class="container-fluid bg-darkviolet text-white">
-            <div class="d-block">6 MetroTech Center, Brooklyn, NY 11201</div>
-        </fotter>
+    <div class="container-fluid bg-robot-1 d-flex justify-content-center align-items-center" style="min-height: 27rem; color: white; font-size: 5rem; border-block: 2px solid black;">
+        <b><span style="background-color: rgba(128, 0, 128, 0.65); padding: 10px; padding-inline: 20px;">NYU</span> ROBOTIC DESIGN TEAM</b>
+    </div>
 
-    </body>
+    <div class="container-fluid d-flex flex-wrap justify-content-center">
+        <a class="info-card" href="#">
+            <div class="bg-robot-2"></div>
+            <b class="info">THE ROBOT</b>
+        </a>
+        <a class="info-card" href="#">
+            <div class="bg-team"></div>
+            <b class="info">THE TEAM</b>
+        </a>
+        <a class="info-card" href="#">
+            <div class="bg-pit"></div>
+            <b class="info">THE COMPETITION</b>
+        </a>
+    </div>
+
+    <!-- <div class="container-fluid d-flex flex-wrap justify-content-center" style="background-color: rgb(245, 245, 245);">
+        <a class="info-card" href="#">
+            <div class="bg-robot-2"></div>
+            <b class="info">THE ROBOT</b>
+        </a>
+        <a class="info-card" href="#">
+            <div class="bg-team"></div>
+            <b class="info">THE TEAM</b>
+        </a>
+    </div> -->
+</body>
 </html>
