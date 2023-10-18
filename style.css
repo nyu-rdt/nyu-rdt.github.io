@@ -1,158 +1,159 @@
-body, html {
-    overflow-x: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    --rdt-dark-purple: #2F0147;
+    --rdt-purple: #541675;
+    --rdt-pink: #E53F71;
+    --rdt-light-blue: #99CCED;
+
+    font-family: 'Cabin', sans-serif;
 }
 
-a {
+/* layout */
+
+body {
+    font-size: 20px;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    /* border: 1px solid red; */
+}
+
+.container-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 2em;
+}
+
+.container-directory {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+header {
+    background: var(--rdt-dark-purple);
+    padding: 2em 0;
+}
+
+/* backgrounds */
+
+.bg-gray {
+    background-color: gray;
+}
+
+.bg-amigo-pic-01 {
+    background-image: url("./resources/amigo-pic-01.jpg");
+}
+
+.bg-team-pic-01 {
+    background-image: url("./resources/team-pic.jpg");
+}
+
+.bg-arena-setup {
+    background-image: url("./resources/arena-setup.jpg");
+}
+
+/* navigation */ 
+
+.site-logo {
+    max-width: 15%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin-left: 2em;
+}
+
+nav a {
     text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-a::after {
-    text-decoration: none;
-}
-
-.bar-item {
-    color: black;
-    padding: 10px;
-    padding-inline: 20px;
-    border-radius: 3px;
-
-    transition: color, background-color 200ms;
-}
-
-.bar-item:hover {
     color: white;
-    background-color: rgb(71, 12, 71);
+    padding: .25em 0;
 }
 
-.apply-button {
-    color: white;
-    padding: 10px;
-    padding-inline: 30px;
-    border-radius: 3px;
-    border: 1px solid black;
-
-    background-color: rgb(126, 49, 126);
-
-    transition: color, background-color 200ms;
+nav a:hover,
+nav a:focus {
+    color: var(--rdt-pink);
 }
 
-.apply-button:hover {
-    color: black;
-    background-color: rgb(255, 181, 255);
+.current-page {
+    color: var(--rdt-light-blue);
+    border-bottom: 2px solid var(--rdt-light-blue);
 }
 
-.info-card {
-    border-radius: 3px;
-    min-width: 20rem;
-    width: 23%;
+.current-page:hover,
+.current-page:focus {
+    color: var(--rdt-light-blue);
+}
+
+/* info section */
+
+.section-image {
+    max-width: 35%;
+    object-fit: cover;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 3.25rem;
+}
+
+.section-text {
+    margin: 0.5em 0;
+    font-size: 2rem;
+}
+
+/* home page directory */
+.directory-item {
+    width: 30%;
+    min-width: 225px;
     aspect-ratio: 1 / 1;
-    margin: 3%;
-    margin-block: 5%;
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
     overflow: hidden;
-    position: relative;
+    border-radius: 10px;
 }
 
-.info-card:hover * {
-    opacity: 1;
-    transform: scale(1.1);
-    background-blend-mode: soft-light;
-}
-
-.info-card:hover .info {
-    transform: translateY(1000);
-}
-
-.info {
-    position: absolute; 
-    top: 0;
-    left: 0;
+.directory-item * {
+    transition: all 0.5s;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    color: white;
-    opacity: 0;
-    font-size: 3.2rem;
-
-    transition: all 0.5s;
 }
 
-.bg-robot-2 {
-    width: 100%;
-    height: 100%;
-    background: url("/resources/Slide1.jpg");
-    background-position: 80%;
-    background-color: rgba(0, 0, 0, 0.329);
-    background-size: cover;
-
-    transition: all 0.5s;
+.directory-item:hover * {
+    transform: scale(1.2);
+    color: rgba(0, 0, 0, 0);
 }
 
-.bg-robot-1 {
-    background: url("/resources/Slide3.jpg");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position-y: bottom;
-}
-
-.bg-team {
-    width: 100%;
-    height: 100%;
-    background: url("/resources/Slide2.jpg");
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.329);
-    background-size: cover;
-
-    transition: all 0.5s;
-}
-
-.bg-pit {
-    width: 100%;
-    height: 100%;
-    background: url("/resources/Slide4.jpg");
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.329);
-    background-size: cover;
-
-    transition: all 0.5s;
-}
-
-
-.bg-black {
-    background-color: black;
-}
-
-
-/* width */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-background: gray;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-background: rgb(82, 54, 83);
-}
