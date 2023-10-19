@@ -44,6 +44,15 @@ body {
     margin-top: 3em;
 }
 
+.container-home-buttons {
+    margin: 3em auto;
+}
+
+.container-home-buttons > div {
+    display: flex;
+    justify-content: space-between;
+}
+
 header {
     background: var(--rdt-dark-purple);
     padding: 0.5em 0;
@@ -54,17 +63,13 @@ header {
 
 /* backgrounds */
 
-.bg-gray {
-    background-color: gray;
-}
-
 .bg-amigo-pic-01 {
     background-image: url("./resources/amigo-pic-01.jpg");
 }
 
 .bg-team-pic-01 {
     background-image: url("./resources/team-pic.jpg");
-    filter: brightness(70%); 
+    /* filter: brightness(70%);  */
 }
 
 .bg-arena-setup {
@@ -92,6 +97,7 @@ nav a {
     text-decoration: none;
     color: white;
     padding: .25em 0;
+    transition: all 0.2s
 }
 
 nav a:hover,
@@ -142,12 +148,14 @@ nav a:focus {
     font-size: 2.5rem;
     overflow: hidden;
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .directory-item * {
     transition: all 0.5s;
     background-size: cover;
     background-position: center;
+    background-blend-mode:difference;
     width: 100%;
     height: 100%;
 
@@ -161,3 +169,21 @@ nav a:focus {
     color: rgba(0, 0, 0, 0);
 }
 
+/* Contact buttons */
+.container-home-buttons a {
+    background-color: var(--rdt-dark-purple);
+    width: 45%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    overflow: hidden;
+    font-size: 2rem;
+    color: white;
+    padding: 0.2em 0;
+
+    transition: all 0.5s;
+}
+
+.container-home-buttons a:hover {
+    background-color: var(--rdt-purple);
+}
