@@ -50,12 +50,22 @@ body {
     margin: 3em auto;
 }
 
+.container-fill {
+    width: 100%;
+}
+
 header {
     background: var(--rdt-dark-purple);
     padding: 0.5em 0;
-    position: fixed;
-    top: 0;
+    /* position: fixed; */
+    /* top: 0; */
     width: 100%; 
+}
+
+footer {
+    background-color: var(--rdt-dark-purple);
+    padding: 0.5em 0;
+    width: 100%;
 }
 
 @media (max-width: 675px) {
@@ -161,8 +171,6 @@ nav a:focus {
     display: flex;
     flex-direction: column;
     width: 55%;
-
-    border: 1px solid orange;
 }
 
 .section-title {
@@ -251,6 +259,63 @@ nav a:focus {
     .container-home-buttons a {
         width: 80%;
         margin-bottom: 30px;
+    }
+
+}
+
+/* Home page */
+
+.home-splash {
+    height: 20em;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+.home-splash * {
+    font-size: 4rem;
+}
+
+.home-splash span {
+    margin: 0;
+    background-color: rgba(128, 0, 128, 0.65); 
+    padding: 10px; 
+    padding-inline: 20px;
+}
+
+.home-splash p {
+    max-width: 900px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media (max-width: 675px) {
+
+    .home-splash {
+        height: 10em;
+    }
+
+    .home-splash p {
+        display: none;
+    }
+
+        
+    .home-splash * {
+        font-size: 1.5rem;
+    }
+
+    .home-splash span {
+        background-color: rgba(128, 0, 128, 0.65); 
+        padding: 10px; 
+        padding-inline: 10px;
+
     }
 
 }
