@@ -45,12 +45,9 @@ body {
 }
 
 .container-home-buttons {
-    margin: 3em auto;
-}
-
-.container-home-buttons > div {
     display: flex;
     justify-content: space-between;
+    margin: 3em auto;
 }
 
 header {
@@ -61,6 +58,33 @@ header {
     width: 100%; 
 }
 
+@media (max-width: 675px) {
+
+    .container-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-directory {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-home-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+}
+
 /* backgrounds */
 
 .bg-amigo-pic-01 {
@@ -69,7 +93,6 @@ header {
 
 .bg-team-pic-01 {
     background-image: url("./resources/team-pic.jpg");
-    /* filter: brightness(70%);  */
 }
 
 .bg-arena-setup {
@@ -115,6 +138,18 @@ nav a:focus {
     color: var(--rdt-light-blue);
 }
 
+@media (max-width: 675px) {
+
+    .site-logo {
+        max-width: 40%;
+    }
+
+    nav li {
+        margin: 0em 0.4em;
+    }
+
+}
+
 /* info section */
 
 .section-image {
@@ -126,6 +161,8 @@ nav a:focus {
     display: flex;
     flex-direction: column;
     width: 55%;
+
+    border: 1px solid orange;
 }
 
 .section-title {
@@ -136,6 +173,18 @@ nav a:focus {
 .section-text {
     margin: 0.5em 0;
     font-size: 2rem;
+}
+
+@media (max-width: 675px) {
+
+    .section-image {
+        display: none;
+    }
+
+    .section-content {
+        text-align: center;
+        width: 100%;
+    }
 }
 
 /* home page directory */
@@ -155,18 +204,27 @@ nav a:focus {
     transition: all 0.5s;
     background-size: cover;
     background-position: center;
-    background-blend-mode:difference;
     width: 100%;
     height: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .directory-item:hover * {
     transform: scale(1.2);
-    color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);    
+}
+
+@media (max-width: 675px) {
+
+    .directory-item {
+        width: 80%;
+        margin-bottom: 1em;
+    }
+    
 }
 
 /* Contact buttons */
@@ -186,4 +244,13 @@ nav a:focus {
 
 .container-home-buttons a:hover {
     background-color: var(--rdt-purple);
+}
+
+@media (max-width: 675px) {
+
+    .container-home-buttons a {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
 }
