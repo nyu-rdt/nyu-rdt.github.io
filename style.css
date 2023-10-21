@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
     --rdt-dark-purple: #2F0147;
@@ -7,6 +8,7 @@
     --rdt-light-blue: #99CCED;
 
     font-family: 'Cabin', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
 }
 
 /* layout */
@@ -183,7 +185,7 @@ nav a:focus {
 }
 
 .section-image:hover {
-    transform: rotate(-5deg) scale(1.1);
+    transform: rotate(-5deg) scale(1.05);
 }
 
 .section-content {
@@ -310,9 +312,10 @@ nav a:focus {
 
 .home-splash span {
     margin: 0;
-    background-color: rgba(128, 0, 128, 0.65); 
+    background-color: rgb(84, 22, 117, 0.65); 
     padding: 10px; 
     padding-inline: 20px;
+    border-radius: 10px;
 }
 
 .home-splash p {
