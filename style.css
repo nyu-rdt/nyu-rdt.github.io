@@ -35,7 +35,8 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    margin-top: 150px;
+    margin-block: 1em;
+    padding-block: 1em;
 }
 
 .container-directory {
@@ -66,6 +67,7 @@ footer {
     background-color: var(--rdt-dark-purple);
     padding: 0.5em 0;
     width: 100%;
+    color: white;
 }
 
 @media (max-width: 675px) {
@@ -148,6 +150,15 @@ nav a:focus {
     color: var(--rdt-light-blue);
 }
 
+.disabled-page {
+    color: gray;
+}
+
+.disabled-page:hover,
+.disabled-page:focus {
+    color: gray;
+}
+
 @media (max-width: 675px) {
 
     .site-logo {
@@ -164,7 +175,15 @@ nav a:focus {
 
 .section-image {
     max-width: 35%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+    border-radius: 15px;
+
+    transition: transform 0.5s;
+}
+
+.section-image:hover {
+    transform: rotate(-5deg) scale(1.1);
 }
 
 .section-content {
@@ -186,7 +205,13 @@ nav a:focus {
 @media (max-width: 675px) {
 
     .section-image {
-        display: none;
+        min-width: 80%;
+        order: 2;
+        /* display: none; */
+    }
+
+    .container-section {
+        flex-direction: column;
     }
 
     .section-content {
