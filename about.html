@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NYU Robotic Design Team</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="./menu_handler.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,8 +22,20 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
         </div> <!-- close nav container -->
     </header>
+
+
+    <div class="mobile-menu">
+        <a href="#">HOME</a>
+        <a href="./about.html">ABOUT</a></li>
+        <a href="#">TEAM</a>
+        <a href="./projects/projects.html">PROJECTS</a>
+        <a href="#">CONTACT</a>
+    </div>
 
     <section class="container container-section">
         <img class="section-image" src="./resources/team-pic.jpg">
