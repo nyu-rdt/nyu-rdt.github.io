@@ -267,16 +267,11 @@ footer {
 
 @media (max-width: 675px) {
 
-    .container-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     .container-section {
         display: flex;
         justify-content: center;
     }
+
     .container-home-buttons {
         flex-direction: column;
         align-items: center;
@@ -297,8 +292,8 @@ footer {
         max-width: 40%;
     }
 
-    nav li {
-        margin: 0em 0.4em;
+    nav {
+        display: none;
     }
 
 }
