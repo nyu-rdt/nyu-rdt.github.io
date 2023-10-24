@@ -21,50 +21,9 @@ h1, h2{
     font-family: myFirstFont;
 }
 
-body {
-    font-size: 20px;
-    margin: 0;
-}
-
-.container {
-    width: 75%;
-    max-width: 1100px;
-    margin: 0 auto;
-
-    /* border: 1px solid red; */
-}
-
-.container-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.container-top{
-    margin-top: 6em;
-}
-
-.container-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-block: 1em;
-    padding-block: 1em;
-
-    margin-top: 5em;
-}
-
 .container-directory {
     display: flex;
     justify-content: space-between;
-}
-
-.container-home-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 3em auto;
 }
 
 .container-fill {
@@ -198,85 +157,7 @@ body {
 }
 
 
-  
-/* Headr & Footer */
-header {
-    background: var(--rdt-dark-purple);
-    padding: 0.5em 0;
-    position: fixed;
-
-    top: 0;
-    width: 100%; 
-
-    z-index: 6;
-}
-
-/* navigation */ 
-.site-logo {
-    max-width: 15%;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    margin-left: 2em;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    padding: .25em 0;
-    transition: all 0.2s
-}
-
-nav a:hover,
-nav a:focus {
-    color: var(--rdt-pink);
-}
-
-.current-page {
-    color: var(--rdt-light-blue);
-    border-bottom: 2px solid var(--rdt-light-blue);
-}
-
-.current-page:hover,
-.current-page:focus {
-    color: var(--rdt-light-blue);
-}
-
-.disabled-page {
-    color: gray;
-}
-
-.disabled-page:hover,
-.disabled-page:focus {
-    color: gray;
-}
-
-footer {
-    background-color: var(--rdt-dark-purple);
-    padding: 0.5em 0;
-    width: 100%;
-    color: white;
-}
-
 @media (max-width: 675px) {
-
-    .container-section {
-        display: flex;
-        justify-content: center;
-    }
-
-    .container-home-buttons {
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-    }
 
     .container-fill {
         width: 100%;
@@ -286,18 +167,6 @@ footer {
 }
 
 /* RESPONSIVE */
-
-@media (max-width: 675px) {
-    .site-logo {
-        max-width: 40%;
-    }
-
-    nav {
-        display: none;
-    }
-
-}
-
 @media (max-width: 675px) {
 
     .section-image {

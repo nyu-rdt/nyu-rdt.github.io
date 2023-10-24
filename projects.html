@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NYU Robotic Design Team</title>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="./slideshow.js"></script>
+    <script src="./menu_handler.js" defer></script>
+    <link rel="stylesheet" href="./shared.css">
+    <link rel="stylesheet" href="./projects.css">
   </head>
   <body>
     <header>
       <div class="container container-nav">
-          <img src="../resources/rdt-logo-white.png" class="site-logo">
+          <img src="./resources/rdt-logo-white.png" class="site-logo">
           <nav>
               <ul>
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="../about.html">About</a></li>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./about.html">About</a></li>
                   <li><a href="#" class="disabled-page">Team</a></li>
                   <li><a href="#" class="current-page">Projects</a></li>
                   <li><a href="#">Contact</a></li>
               </ul>
           </nav>
+          <button class="hamburger">
+            <div class="bar"></div>
+          </button>
       </div> <!-- close nav container -->
     </header>
+    
+    <div class="mobile-menu">
+      <a href="./index.html">HOME</a>
+      <a href="./about.html" class="current-page">ABOUT</a></li>
+      <a href="#">TEAM</a>
+      <a href="./projects.html">PROJECTS</a>
+      <a href="#">CONTACT</a>
+    </div>
     
     <div class="container container-top">
       <h1>Recent Season: 2022-2023</h1>
