@@ -1,3 +1,5 @@
+/* Style sheet for elements shared throughout the page */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
@@ -48,18 +50,6 @@ body {
     margin-top: 5em;
 }
 
-.container-directory {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3em;
-}
-
-.container-home-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 3em auto;
-}
-
 .container-fill {
     width: 100%;
 }
@@ -89,21 +79,8 @@ footer {
         justify-content: center;
     }
 
-    .container-directory {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .container-home-buttons {
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-    }
-
     .container-fill {
         width: 100%;
-        margin-top: 9em;
     }
 
 }
@@ -231,133 +208,6 @@ nav a:focus {
     }
 }
 
-/* home page directory */
-.directory-item {
-    width: 30%;
-    min-width: 225px;
-    aspect-ratio: 1 / 1;
-    text-decoration: none;
-    color: white;
-    font-size: 2.5rem;
-    overflow: hidden;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-.directory-item * {
-    transition: all 0.5s;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.directory-item:hover * {
-    transform: scale(1.2);
-    color: rgba(0, 0, 0, 0);  
-    z-index: 0;  
-}
-
-@media (max-width: 675px) {
-
-    .directory-item {
-        width: 80%;
-        margin-bottom: 1em;
-    }
-    
-}
-
-/* Contact buttons */
-.container-home-buttons a {
-    background-color: var(--rdt-dark-purple);
-    width: 45%;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 15px;
-    overflow: hidden;
-    font-size: 2rem;
-    color: white;
-    padding: 0.2em 0;
-
-    transition: all 0.5s;
-}
-
-.container-home-buttons a:hover {
-    background-color: var(--rdt-purple);
-}
-
-@media (max-width: 675px) {
-
-    .container-home-buttons a {
-        width: 80%;
-        margin-bottom: 30px;
-    }
-
-}
-
-/* Home page */
-
-.home-splash {
-    height: 20em;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
-}
-
-.home-splash * {
-    font-size: 4rem;
-}
-
-.home-splash span {
-    margin: 0;
-    background-color: rgb(84, 22, 117, 0.65); 
-    padding: 10px; 
-    padding-inline: 20px;
-    border-radius: 10px;
-}
-
-.home-splash p {
-    max-width: 900px;
-    text-align: center;
-    font-size: 2rem;
-}
-
-@media (max-width: 675px) {
-
-    .home-splash {
-        height: 10em;
-    }
-
-    .home-splash p {
-        display: none;
-    }
-
-        
-    .home-splash * {
-        font-size: 1.5rem;
-    }
-
-    .home-splash span {
-        background-color: rgba(128, 0, 128, 0.65); 
-        padding: 10px; 
-        padding-inline: 10px;
-
-    }
-
-}
-
 /* Hamburger icon */
 .hamburger {
     width: 35px;
@@ -442,3 +292,7 @@ nav a:focus {
     border-bottom: 2px solid var(--rdt-purple);
 }
 
+.mobile-menu > .current-page {
+    background-color: var(--rdt-purple);
+    border-bottom: 0;
+}
