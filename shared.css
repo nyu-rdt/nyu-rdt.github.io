@@ -132,15 +132,6 @@ nav a:focus {
     color: var(--rdt-light-blue);
 }
 
-.disabled-page {
-    color: gray;
-}
-
-.disabled-page:hover,
-.disabled-page:focus {
-    color: gray;
-}
-
 @media (max-width: 675px) {
 
     .site-logo {
@@ -265,6 +256,8 @@ nav a:focus {
 
     transition: 0.5s;
     overflow: hidden;
+    
+    z-index: 5;
 }
 
 .mobile-menu.is-active {
@@ -289,4 +282,17 @@ nav a:focus {
 .mobile-menu > .current-page {
     background-color: var(--rdt-purple);
     border-bottom: 0;
+}
+
+.disabled-page {
+    color: gray;
+}
+
+.mobile-menu > .disabled-page {
+    color: gray;
+}
+
+.disabled-page:hover,
+.disabled-page:focus {
+    color: gray;
 }

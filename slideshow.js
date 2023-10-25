@@ -1,37 +1,42 @@
+// Current Slide
 let slideIndex = 0;
-showSlides(slideIndex);
 
-// Next/previous controls
+// Prev / next controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  slideIndex += n;
+  showSlides(slideIndex);
 }
 
-// Thumbnail image controls
+// Dot controls
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  slideIndex = n;
+  showSlides(slideIndex);
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
+  // Get all slides
+  let $slides = $(".slide");
+  let $dots = $(".dot");
 
-  if (n < 1) {
-    slideIndex = slides.length ;
-  }
+  // Make sure index in bounds
+  slideIndex = n > $slides.length-1 ? 0 : slideIndex;
+  slideIndex = n < 0 ? $slides.length-1 : slideIndex;
 
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = " none";
-  }
+  // Enable current slide, disable all others
+  $slides.each(function(index) {
+    if(index === slideIndex) {
+      $(this).css("display", "block");
+    } else {
+      $(this).css("display", "none");
+    }
+  })
 
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  // console.log(slides[slideIndex-1])
-  slides[slideIndex-1].style.display = " block";
-  dots[slideIndex-1].className += " active";
+  // Enable current dot, disable all others
+  $dots.each(function(index) {
+    if(index === slideIndex) {
+      $(this).addClass("active");
+    } else {
+      $(this).removeClass("active");
+    }
+  })
 }
