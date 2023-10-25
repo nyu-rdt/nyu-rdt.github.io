@@ -35,10 +35,6 @@ body {
 
 }
 
-.container-top{
-    margin-top: 4em;
-}
-
 .container-section {
     display: flex;
     align-items: center;
@@ -46,8 +42,6 @@ body {
 
     margin-block: 1em;
     padding-block: 1em;
-
-    margin-top: 5em;
 }
 
 .container-fill {
@@ -57,7 +51,7 @@ body {
 header {
     background: var(--rdt-dark-purple);
     padding: 0.5em 0;
-    position: fixed;
+    position: sticky;
 
     top: 0;
     width: 100%; 
