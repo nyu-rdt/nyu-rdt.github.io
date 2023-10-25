@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 @font-face {
-    font-family: myFirstFont;
-    src: url(../resources/good_times.otf) format('opentype');
+    font-family: titleFont;
+    src: url(./resources/good_times.otf) format('opentype');
 }
 
 * {
@@ -18,7 +17,7 @@
 
 /* layout */
 h1, h2, h3{
-    font-family: myFirstFont;
+    font-family: titleFont;
 }
 
 h2, h3 {
@@ -209,4 +208,22 @@ h3 {
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+}
+
+
+
+
+
+/* locate footer on the bottom; 
+    remove once contents are added  */
+footer{
+    bottom: 0; 
+    position: fixed;
+}
+
+@media (max-width: 675px){
+    footer{
+        bottom: 0; 
+        position: sticky;
+    }
 }

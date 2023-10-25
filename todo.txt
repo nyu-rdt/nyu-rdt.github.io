@@ -1,0 +1,15 @@
+Footer 
+- if there's no enough content should we fix to bottom?
+
+Home Page
+- where to link 'join us' and 'sponsor us'
+
+Teams Page 
+- start? sadfjas;dfasd
+
+Projects Page
+- some dots are not functioning correctly; need to check 
+
+Contacts Page
+- add explanation? check figma design 
+
