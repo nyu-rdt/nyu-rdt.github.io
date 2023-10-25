@@ -1,14 +1,23 @@
 // Current Slide
 let slideIndex = 0;
 
+// Automatic slideshow
+const slideTimer = 5000;
+var slideAdvance = setInterval(() => {
+  slideIndex ++;
+  showSlides(slideIndex);
+}, slideTimer);
+
 // Prev / next controls
 function plusSlides(n) {
+  clearInterval(slideAdvance)
   slideIndex += n;
   showSlides(slideIndex);
 }
 
 // Dot controls
 function currentSlide(n) {
+  clearInterval(slideAdvance);
   slideIndex = n;
   showSlides(slideIndex);
 }
