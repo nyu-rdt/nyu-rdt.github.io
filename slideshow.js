@@ -24,7 +24,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   // Get all slides
-  let $slides = $(".slide");
+  let $slides = $(".current-project .slide");
   let $dots = $(".dot");
 
   // Make sure index in bounds
@@ -48,4 +48,16 @@ function showSlides(n) {
       $(this).removeClass("active");
     }
   })
+}
+
+function showProject(project) {
+  $(".container-project").each(function() {
+    $(this).removeClass("current-project")  
+  })
+  $("#"+project).addClass("current-project")
+
+  $(".chip").each(function() {
+    $(this).removeClass("active")
+  })
+  $(".chip." + project).addClass("active")
 }
