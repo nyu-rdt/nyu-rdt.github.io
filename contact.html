@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYU Robotic Design Team</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="./menu_handler.js" defer></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="container container-nav">
+            <img src="resources/rdt-logo-white.png" class="site-logo">
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="#" class="disabled-page">Team</a></li>
+                    <li><a href="./projects.html" >Projects</a></li>
+                    <li><a href="./contact.html" class="current-page">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger">
+              <div class="bar"></div>
+            </button>
+        </div> <!-- close nav container -->
+    </header>
+
+    <div class="mobile-menu">
+      <a href="./index.html" >HOME</a>
+      <a href="./about.html">ABOUT</a></li>
+      <a href="#" class="disabled-page">TEAM</a>
+      <a href="./projects.html">PROJECTS</a>
+      <a href="./contact.html" class="current-page">CONTACT</a>
+    </div>
+
+    <div class="container form-container">
+        <div >
+            <img src="/resources/all-team-pic.JPG" class="form-image">
+        </div>
+        
+
+        <!-- sends to semi's email -->
+        <form target="_blank" action="https://formsubmit.co/135f5c463ef266fab0680cf6b41a889a" method="POST">
+         
+            <div class="form-row form-name">
+                <label class="form-item" for="firstname">
+                    First Name
+                </label>
+                <label class="form-item" for="lastname">
+                    Last Name
+                </label>
+
+                <input type="text" id="firstname" class="form-item" required>
+                <input type="text" id="lastname"class="form-item" required> 
+
+            </div>
+            
+            <div class="form-row">
+                <label class="form-item" for="email">
+                    Email Address
+                </label>
+
+                <input type="email" id="email" autocomplete="email">
+            </div>
+
+            <div class="form-row">
+                <label class="form-item" for="message" >
+                    Message
+                </label>
+
+
+                <textarea class="form-item" id="message" placeholder="Tell us about you" ></textarea>
+            </div>
+
+
+            <button type="submit">Send</button> 
+            
+
+        </form>
+    </div>
+
+    <footer>
+      <div class="container container-nav">
+        <p>NYU Robotic Design Team</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

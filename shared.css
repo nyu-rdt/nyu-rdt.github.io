@@ -1,7 +1,10 @@
 /* Style sheet for elements shared throughout the page */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@font-face {
+    font-family: titleFont;
+    src: url(/resources/good_times.otf) format('opentype');
+}
 
 * {
     --rdt-dark-purple: #2F0147;
@@ -9,8 +12,8 @@
     --rdt-pink: #E53F71;
     --rdt-light-blue: #99CCED;
 
-    font-family: 'Cabin', sans-serif;
-    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Cabin', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* layout */
@@ -114,7 +117,9 @@ nav a {
     text-decoration: none;
     color: white;
     padding: .25em 0;
-    transition: all 0.2s
+    transition: all 0.2s;
+    font-family: titleFont;
+    font-size: 1rem;
 }
 
 nav a:hover,
@@ -168,11 +173,13 @@ nav a:focus {
 .section-title {
     margin: 0;
     font-size: 3.25rem;
+    font-family: titleFont;
+    font-size: 2.5rem;
 }
 
 .section-text {
     margin: 0.5em 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 675px) {
@@ -266,13 +273,14 @@ nav a:focus {
 
 .mobile-menu a {
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
     color: white;
     text-decoration: none;
     padding-block: 10px;
     padding-right: 10px;
-    border-top: 2px solid var(--rdt-purple)
+    border-top: 2px solid var(--rdt-purple);
+    font-family: titleFont;
 }
 
 .mobile-menu a:last-child {
