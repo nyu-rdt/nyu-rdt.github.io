@@ -209,21 +209,3 @@ h3 {
     from {opacity: .4}
     to {opacity: 1}
 }
-
-
-
-
-
-/* locate footer on the bottom; 
-    remove once contents are added  */
-footer{
-    bottom: 0; 
-    position: fixed;
-}
-
-@media (max-width: 675px){
-    footer{
-        bottom: 0; 
-        position: sticky;
-    }
-}
