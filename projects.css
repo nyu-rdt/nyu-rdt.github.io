@@ -43,10 +43,9 @@ h1, h2{
     /* border: 1px solid white; */
 }
 
-.description{
+.description {
     width: 40%;
     height: auto;
-
     /* border: 1px solid white; */
 }
 
@@ -183,4 +182,33 @@ h1, h2{
         text-align: center;
         width: 100%;
     }
+}
+
+
+
+
+.photo-slider {
+    width: 50%;
+    
+    border: 1px solid red;
+}
+
+.slideshow {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.slide {
+    display: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.slide-number {
+    position: absolute;
+    top: 0;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
 }
