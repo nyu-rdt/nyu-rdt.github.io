@@ -25,7 +25,7 @@ function currentSlide(n) {
 function showSlides(n) {
   // Get all slides
   let $slides = $(".current-project .slide");
-  let $dots = $(".dot");
+  let $dots = $(".current-project .dot");
 
   // Make sure index in bounds
   slideIndex = n > $slides.length-1 ? 0 : slideIndex;
