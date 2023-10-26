@@ -14,16 +14,26 @@
     justify-content: space-evenly;
 }
 
+@media (max-width: 675px) {
+    .card-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .team-card {
     position: relative;
     margin: 0;
     padding: 0;
     width: 25%;
+    min-width: 250px;
     /* margin: 5em; */
     margin-block: 2em;
     margin-inline: 0.25em;
     overflow: hidden;
     border-radius: 20px;
+
 }
 
 .team-card > img {
@@ -73,6 +83,7 @@
 .member-bio {
     background-color: var(--rdt-dark-purple);
     font-size: 0.8rem;
+    padding-block: 0;
 }
 
 .member-links {
@@ -99,7 +110,7 @@
 }
 
 .member-links a {
-    width: 10%;
+    width: 15%;
     margin-inline: 0.5em;
 }
 
