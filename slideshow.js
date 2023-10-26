@@ -28,8 +28,8 @@ function showSlides(n) {
   let $dots = $(".current-project .dot");
 
   // Make sure index in bounds
-  slideIndex = n > $slides.length-1 ? 0 : slideIndex;
-  slideIndex = n < 0 ? $slides.length-1 : slideIndex;
+  slideIndex = n > $slides.length-1 ? 0 : n;
+  slideIndex = n < 0 ? $slides.length-1 : n;
 
   // Enable current slide, disable all others
   $slides.each(function(index) {
@@ -60,4 +60,6 @@ function showProject(project) {
     $(this).removeClass("active")
   })
   $(".chip." + project).addClass("active")
+
+  slideIndex = 0
 }
