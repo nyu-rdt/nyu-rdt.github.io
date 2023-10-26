@@ -22,13 +22,19 @@
     }
 }
 
+h1 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 0;
+}
+
 .team-card {
     position: relative;
-    margin: 0;
     padding: 0;
     width: 25%;
     min-width: 250px;
-    /* margin: 5em; */
     margin-block: 2em;
     margin-inline: 0.25em;
     overflow: hidden;
@@ -123,4 +129,19 @@
 
 .link-icon:hover {
     cursor:pointer
+}
+
+@media (max-width: 675px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .team-card {
+        padding: 0;
+        width: 90%;
+        margin-inline: 0;
+        margin-block: 1em;
+        overflow: hidden;
+        border-radius: 20px;
+    }
 }
