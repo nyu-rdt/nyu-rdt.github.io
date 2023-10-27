@@ -66,8 +66,8 @@ h3 {
 .chip {
     color: white;
     background-color: var(--rdt-dark-purple);
-    padding: 0.5em 2em;
-    border-radius: 2em;
+    padding: 1em 2em;
+    border-radius: 1em;
     border: 2px solid white;
     transition: all 0.25s;
     margin: 1em 1em;
