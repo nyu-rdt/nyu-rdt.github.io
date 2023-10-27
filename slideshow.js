@@ -28,8 +28,13 @@ function showSlides(n) {
   let $dots = $(".current-project .dot");
 
   // Make sure index in bounds
-  slideIndex = n > $slides.length-1 ? 0 : n;
-  slideIndex = n < 0 ? $slides.length-1 : n;
+  if(slideIndex == $slides.length){
+    slideIndex = 0;
+  }
+  if(slideIndex == -1){
+    slideIndex = $slide.length-1;
+  }
+  console.log(slideIndex)
 
   // Enable current slide, disable all others
   $slides.each(function(index) {
