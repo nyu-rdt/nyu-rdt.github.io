@@ -60,17 +60,17 @@ h3 {
 
 .chip-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .chip {
     color: white;
     background-color: var(--rdt-dark-purple);
     padding: 0.5em 2em;
-    border-radius: 5em;
-    border: 2px solid black;
+    border-radius: 2em;
+    border: 2px solid white;
     transition: all 0.25s;
-    margin: 1em 2em;
+    margin: 1em 1em;
 }
 
 .chip.active {
@@ -191,19 +191,19 @@ h3 {
 }
 
 /* Slideshow dots */
-.dot-container {
+.slider-dots{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 .dot {
     cursor: pointer;
     height: 10px;
     width: 10px;
-    margin: 0 1em;
+    margin: 0 0.5em;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;

@@ -69,6 +69,20 @@ footer {
     color: white;
 }
 
+.container-footer{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-content: space-between;
+    align-items: left;
+    padding-bottom: 10px;
+}
+
+.footer-icon{
+    width: 2rem;
+    height: 2rem;
+}
+
+
 @media (max-width: 675px) {
 
     .container-section {
@@ -179,7 +193,7 @@ nav a:focus {
 
 .section-text {
     margin: 0.5em 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 @media (max-width: 675px) {
