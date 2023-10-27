@@ -16,7 +16,8 @@
 
 @media (max-width: 675px) {
     .card-container {
-        flex-direction: column;
+        /* flex-direction: column; */
+        flex-direction: row;
         justify-content: center;
         align-items: center;
     }
@@ -26,8 +27,9 @@ h1 {
     width: 100%;
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid black;
     margin-bottom: 0;
+    font-family: titleFont;
 }
 
 .team-card {
@@ -39,6 +41,7 @@ h1 {
     margin-inline: 0.25em;
     overflow: hidden;
     border-radius: 20px;
+    box-shadow: 0px 0px 15px #541675;
 
 }
 
@@ -65,31 +68,37 @@ h1 {
 .member-info > * {
     margin: 0;
     font-size: 1.1rem;
-    padding: 10px 10px;
+    /* padding: 10px 10px; */
 }
 
 .member-info > *:last-child {
-    border-radius: 0px 0 20px 20px;
-    padding-bottom: 20px;
+    border-radius: 0px 0px 1rem 1rem;
+    padding-bottom: 1rem;
 }
 
 .member-position {
-    background-color: var(--rdt-purple);
+    background-color: var(--rdt-dark-purple);
     /* color: black; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border: none;
     width: fit-content;
     min-width: 50%;
-    border-radius: 0 5px 0 0;
+    border-radius: 0 10px 0 0;
+    font-size: 15px;
+    padding: 0.5rem 1rem;
 }
 
 .member-name {
-    background-color: var(--rdt-dark-purple);
+    background-color: var(--rdt-purple);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
 }
 
 .member-bio {
-    background-color: var(--rdt-dark-purple);
+    background-color: var(--rdt-purple);
     font-size: 0.8rem;
     padding-block: 0;
+    padding: 0 1rem;
 }
 
 .member-links {
