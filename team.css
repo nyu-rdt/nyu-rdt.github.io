@@ -43,6 +43,11 @@ h1 {
     border-radius: 20px;
     box-shadow: 0px 0px 15px #541675;
 
+    transition: box-shadow 0.5s;
+}
+
+.team-card:hover {
+    box-shadow: 0px 0px 30px #541675;
 }
 
 .team-card > img {
