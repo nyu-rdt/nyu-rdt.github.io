@@ -85,6 +85,7 @@ h3 {
 @media (max-width: 675px) {
     .chip-container {
         flex-wrap: wrap;
+        justify-content: center;
     }
     
     .chip {
@@ -204,7 +205,7 @@ h3 {
     height: 10px;
     width: 10px;
     margin: 0 0.5em;
-    background-color: #bbb;
+    background-color: #2F0147;
     border-radius: 50%;
     display: inline-block;
     transition: 0.6s ease;
@@ -212,7 +213,7 @@ h3 {
 
 .active, .dot:hover {
     /* background-color: #545454; */
-    background-color: #2F0147;
+    background-color: #bbb;
 }
 
 @media (max-width: 675px) {
