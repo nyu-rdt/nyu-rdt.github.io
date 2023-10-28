@@ -32,9 +32,8 @@ function showSlides(n) {
     slideIndex = 0;
   }
   if(slideIndex == -1){
-    slideIndex = $slide.length-1;
+    slideIndex = $slides.length-1;
   }
-  console.log(slideIndex)
 
   // Enable current slide, disable all others
   $slides.each(function(index) {
