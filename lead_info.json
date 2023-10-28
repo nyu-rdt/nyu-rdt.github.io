@@ -1,0 +1,90 @@
+[
+  {
+    "first_name": "Justin",
+    "last_name": "Rivera",
+    "competency": "Advisory",
+    "position": "SW Advisor",
+    "major": "Computer Science",
+    "graduation_year": 2024,
+    "linkedin": "https://www.linkedin.com/in/justin-rivera-592149233/",
+    "github": "https://github.com/jriv01",
+    "instagram": null
+  },
+  {
+    "first_name": "Nabira",
+    "last_name": "Ahmad",
+    "competency": "Software Engineering",
+    "position": "Systems Engineer",
+    "major": "Computer Science",
+    "graduation_year": 2025,
+    "linkedin": "https://www.linkedin.com/in/nabira-ahmad-626b15231",
+    "github": "https://github.com/nabiraahmad",
+    "instagram": null
+  },
+  {
+    "first_name": "Jason",
+    "last_name": "Liu",
+    "competency": "Mechanical Engineering",
+    "position": "Manufacturing Sub-Lead",
+    "major": "Mechanical Engineering",
+    "graduation_year": 2024,
+    "linkedin": null,
+    "github": null,
+    "instagram": null
+  },
+  {
+    "first_name": "Peter",
+    "last_name": "Han",
+    "competency": "Electrical Engineering",
+    "position": "Technical Lead",
+    "major": "Electrical Engineering",
+    "graduation_year": 2024,
+    "linkedin": null,
+    "github": null,
+    "instagram": null
+  },
+  {
+    "first_name": "Trisha",
+    "last_name": "Bui",
+    "competency": "Advisory",
+    "position": "PM Advisor",
+    "major": "Business and Technology Management",
+    "graduation_year": 2023,
+    "linkedin": "https://www.linkedin.com/in/trishabui24/",
+    "github": null,
+    "instagram": "https://www.instagram.com/trisha.bui/"
+  },
+  {
+    "first_name": "Semi",
+    "last_name": "Hong",
+    "competency": "Outreach",
+    "position": "Lead",
+    "major": "Computer Science",
+    "graduation_year": 2024,
+    "linkedin": "https://www.linkedin.com/in/semi-hong/",
+    "github": null,
+    "instagram": null
+  },
+  {
+    "first_name": "Nishat",
+    "last_name": "Shamiha",
+    "competency": "Software Engineering",
+    "position": "Technical Lead",
+    "major": "Computer Science",
+    "graduation_year": 2024,
+    "linkedin": null,
+    "github": null,
+    "instagram": null
+  },
+  {
+    "first_name": "Nishat",
+    "last_name": "Shamiha",
+    "competency": "Marketing and Public Relations",
+    "position": "Lead",
+    "major": "Computer Science",
+    "graduation_year": 2024,
+    "linkedin": null,
+    "github": null,
+    "instagram": null
+  }
+]
