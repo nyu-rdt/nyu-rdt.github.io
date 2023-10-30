@@ -28,7 +28,7 @@ const getLeadLinks = lead => {
         html += `<a target="_blank" href="${lead.instagram}"><img src="./resources/icons/insta-icon.png" class="link-icon"></a>`
     }
     if(lead.website != null) {
-        html += `<a target="_blank" href="${lead.website}"><img src="./resources/icons/desktop-icon.png" class="link-icon"></a>`
+        html += `<a target="_blank" href="${lead.website}"><img src="./resources/icons/www-icon.png" class="link-icon"></a>`
     }
 
     // Close div and return
