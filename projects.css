@@ -71,6 +71,7 @@ h3 {
     border: 2px solid white;
     transition: all 0.25s;
     margin: 1em 1em;
+    white-space: nowrap;
 }
 
 .chip.active {
@@ -84,14 +85,15 @@ h3 {
 
 @media (max-width: 675px) {
     .chip-container {
-        flex-wrap: wrap;
-        justify-content: center;
+        justify-content: left;
+        overflow-x: scroll;
     }
     
     .chip {
         margin: 0.7em 0.25em;
     }
 }
+
 
 /* Project description */
 .description {
