@@ -84,6 +84,20 @@ h3 {
     .chip-container {
         justify-content: left;
         overflow-x: scroll;
+        margin-bottom: 5px;
+    }
+
+    .chip-container::-webkit-scrollbar {
+        visibility: visible;
+        height: 3px;
+    }
+    
+    .chip-container::-webkit-scrollbar-track {
+        background-color: lightgray;
+    }
+    
+    .chip-container::-webkit-scrollbar-thumb {
+        background-color: purple;
     }
     
     .chip {

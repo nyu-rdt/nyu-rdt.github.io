@@ -8,8 +8,7 @@
     --rdt-pink: #E53F71;
     --rdt-light-blue: #99CCED;
 
-    font-family: 'Cabin', sans-serif;
-    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* layout */
@@ -81,6 +80,7 @@
     .directory-item {
         width: 80%;
         margin-bottom: 1em;
+        font-size: 2rem;
     }
     
 }
@@ -165,7 +165,7 @@
 @media (max-width: 675px) {
 
     .home-splash {
-        height: 10em;
+        height: 8em;
     }
 
     .home-splash p {
@@ -174,7 +174,7 @@
 
         
     .home-splash * {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .home-splash span {
