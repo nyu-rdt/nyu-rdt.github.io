@@ -131,7 +131,7 @@
 /* Home page */
 
 .home-splash {
-    height: 20em;
+    height: 15em;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -159,7 +159,18 @@
 .home-splash p {
     max-width: 900px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 500;
+
+    background-color: rgb(84, 22, 117, 0.6); 
+    border-radius: 25px;
+    padding-block: 10px;
+}
+
+.tag-line {
+    text-align: center;
+    font-size: 2.5rem;
 }
 
 @media (max-width: 675px) {
@@ -182,6 +193,10 @@
         padding: 10px; 
         padding-inline: 10px;
 
+    }
+
+    .tag-line {
+        font-size: 2rem;
     }
 
 }
