@@ -64,6 +64,7 @@ body::-webkit-scrollbar-thumb {
 
 .container-fill {
     width: 100%;
+    background-size: cover;
 }
 
 header {
@@ -124,6 +125,10 @@ a:has(.footer-icon) {
 
 .bg-team-pic-01 {
     background-image: url("./resources/team-pic.jpg");
+}
+
+.bg-all-team {
+    background-image: url("./resources/all-team-cropped.jpg")
 }
 
 .bg-arena-setup {
