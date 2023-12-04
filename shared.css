@@ -141,6 +141,11 @@ a:has(.footer-icon) {
     max-width: 15%;
 }
 
+.tandon-logo {
+    max-width:30%;
+    margin: 1rem 0;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
