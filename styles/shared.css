@@ -120,19 +120,19 @@ a:has(.footer-icon) {
 /* backgrounds */
 
 .bg-amigo-pic-01 {
-    background-image: url("./resources/amigo-pic-01.jpg");
+    background-image: url("../resources/amigo-pic-01.jpg");
 }
 
 .bg-team-pic-01 {
-    background-image: url("./resources/team-pic.jpg");
+    background-image: url("../resources/team-pic.jpg");
 }
 
 .bg-all-team {
-    background-image: url("./resources/all-team-cropped.jpg")
+    background-image: url("../resources/all-team-cropped.jpg")
 }
 
 .bg-arena-setup {
-    background-image: url("./resources/arena-setup.jpg");
+    background-image: url("../resources/arena-setup.jpg");
 }
 
 /* navigation */ 

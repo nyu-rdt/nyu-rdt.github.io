@@ -69,7 +69,7 @@ const buildLeadCards = rdtLeads => {
     });
 }
 
-const fileURL = 'lead_info.json';
+const fileURL = '../scripts/lead_info.json';
 fetchFileContent(fileURL)
 .then(fileContent => JSON.parse(fileContent))
 .then(obj => buildLeadCards(obj));
