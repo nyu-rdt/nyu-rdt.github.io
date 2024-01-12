@@ -173,6 +173,42 @@
     font-size: 2.5rem;
 }
 
+.application {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: var(--rdt-dark-purple);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.application > p {
+    font-size: 2rem;
+    margin-block: 0 2rem;
+    color: white; 
+    font-style: italic;
+    text-align: center;
+}
+
+.application > a {
+    width: 25%;
+    padding: 10px 100px;
+    background-color: var(--rdt-purple);
+    color: white;
+    font-size: 3rem;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+
+    transition: all 0.5s;
+}
+
+.application > a:hover {
+    background-color: rgb(246, 179, 255);
+    color: black;
+}
+
 @media (max-width: 675px) {
 
     .home-splash {
@@ -196,7 +232,17 @@
     }
 
     .tag-line {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
+    .application > p {
+        font-size: 1.25rem;
+    }
+
+    .application > a {
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
 }
