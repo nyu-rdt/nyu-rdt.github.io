@@ -1,5 +1,17 @@
 [
   {
+    "first_name": "Giuseppe",
+    "last_name": "Loianno",
+    "competency": "Faculty",
+    "position": "Faculty Advisor",
+    "major": "Assistant Professor",
+    "graduation_year": "",
+    "linkedin": "https://www.linkedin.com/in/giuseppe-loianno-2a797778/",
+    "github": null,
+    "instagram": null,
+    "website": "https://engineering.nyu.edu/faculty/giuseppe-loianno"
+  },
+  {
     "first_name": "Justin",
     "last_name": "Rivera",
     "competency": "Advisory",
@@ -132,6 +144,30 @@
     "website": null
   },
   {
+    "first_name": "Cinerita",
+    "last_name": "Andrandes",
+    "competency": "Mechanical Engineering",
+    "position": "Systems Engineer",
+    "major": "MS in Mechanical Engineering",
+    "graduation_year": 2024,
+    "linkedin": "https://www.linkedin.com/in/cinerita-andrandes-36a0331b3",
+    "github": null,
+    "instagram": null,
+    "website": null
+  },
+  {
+    "first_name": "Alex",
+    "last_name": "Hsu",
+    "competency": "Mechanical Engineering",
+    "position": "Systems Engineer & Design Sublead",
+    "major": "Mechanical Engineering",
+    "graduation_year": 2026,
+    "linkedin": "https://www.linkedin.com/in/alexander-hsu-753061252?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4du1QwUeQeCHoEqgYz7sjA%3D%3D",
+    "github": null,
+    "instagram": null,
+    "website": null
+  },
+  {
     "first_name": "Devansh",
     "last_name": "Agarwal",
     "competency": "Mechanical Engineering",
@@ -151,30 +187,6 @@
     "major": "Mechanical Engineering",
     "graduation_year": 2024,
     "linkedin": null,
-    "github": null,
-    "instagram": null,
-    "website": null
-  },
-  {
-    "first_name": "Cinerita",
-    "last_name": "Andrandes",
-    "competency": "Mechanical Engineering",
-    "position": "Manufacturing Sublead",
-    "major": "MS in Mechanical Engineering",
-    "graduation_year": 2024,
-    "linkedin": "https://www.linkedin.com/in/cinerita-andrandes-36a0331b3",
-    "github": null,
-    "instagram": null,
-    "website": null
-  },
-  {
-    "first_name": "Alex",
-    "last_name": "Hsu",
-    "competency": "Mechanical Engineering",
-    "position": "Design Sublead",
-    "major": "Mechanical Engineering",
-    "graduation_year": 2026,
-    "linkedin": "https://www.linkedin.com/in/alexander-hsu-753061252?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4du1QwUeQeCHoEqgYz7sjA%3D%3D",
     "github": null,
     "instagram": null,
     "website": null
@@ -255,7 +267,7 @@
     "first_name": "Kimberly",
     "last_name": "Sinchi",
     "competency": "Team Leadership",
-    "position": "Team Sublead",
+    "position": "Team Lead",
     "major": "Computer Science",
     "graduation_year": 2024,
     "linkedin": "https://www.linkedin.com/in/kimberly-sinchi-a3b19420a/",
