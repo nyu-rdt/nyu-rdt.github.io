@@ -1,0 +1,248 @@
+/* Stylesheet for the home page */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    --rdt-dark-purple: #2F0147;
+    --rdt-purple: #541675;
+    --rdt-pink: #E53F71;
+    --rdt-light-blue: #99CCED;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* layout */
+
+.container-directory {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.container-home-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 3em auto;
+}
+
+@media (max-width: 675px) {
+
+    .container-directory {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-home-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+}
+
+/* home page directory */
+.directory-item {
+    width: 30%;
+    min-width: 225px;
+    aspect-ratio: 1 / 1;
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+    overflow: hidden;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.directory-item * {
+    transition: all 0.5s;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: titleFont;
+
+}
+
+.directory-item:hover * {
+    transform: scale(1.2);
+    color: rgba(0, 0, 0, 0);  
+    z-index: 0;  
+}
+
+@media (max-width: 675px) {
+
+    .directory-item {
+        width: 80%;
+        margin-bottom: 1em;
+        font-size: 2rem;
+    }
+    
+}
+
+/* Contact buttons */
+.container-home-buttons a {
+    background-color: var(--rdt-dark-purple);
+    width: 45%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    overflow: hidden;
+    font-size: 2rem;
+    color: white;
+    padding: 0.2em 0;
+
+    transition: all 0.5s;
+
+    position: relative;
+    isolation: isolate;
+}
+
+.container-home-buttons a::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: #541675;
+    inset: 0;
+    scale: 0 1;
+
+    transform-origin: left;
+    transition: all 0.5s;
+}
+
+.container-home-buttons a:hover::after {
+    scale: 1 1;
+}
+
+@media (max-width: 675px) {
+
+    .container-home-buttons a {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+}
+
+/* Home page */
+
+.home-splash {
+    height: 15em;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+.home-splash * {
+    font-size: 4rem;
+}
+
+.home-splash span {
+    margin: 0;
+    background-color: rgb(84, 22, 117, 0.65); 
+    padding: 10px; 
+    padding-inline: 20px;
+    border-radius: 10px;
+}
+
+.home-splash p {
+    max-width: 900px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 500;
+
+    background-color: rgb(84, 22, 117, 0.6); 
+    border-radius: 25px;
+    padding-block: 10px;
+}
+
+.tag-line {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.application {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: var(--rdt-dark-purple);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.application > p {
+    font-size: 2rem;
+    margin-block: 0 2rem;
+    color: white; 
+    font-style: italic;
+    text-align: center;
+}
+
+.application > a {
+    width: 25%;
+    padding: 10px 100px;
+    background-color: var(--rdt-purple);
+    color: white;
+    font-size: 3rem;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+
+    transition: all 0.5s;
+}
+
+.application > a:hover {
+    background-color: rgb(246, 179, 255);
+    color: black;
+}
+
+@media (max-width: 675px) {
+
+    .home-splash {
+        height: 8em;
+    }
+
+    .home-splash p {
+        display: none;
+    }
+
+        
+    .home-splash * {
+        font-size: 1.3rem;
+    }
+
+    .home-splash span {
+        background-color: rgba(128, 0, 128, 0.65); 
+        padding: 10px; 
+        padding-inline: 10px;
+
+    }
+
+    .tag-line {
+        font-size: 1.5rem;
+    }
+
+    .application > p {
+        font-size: 1.25rem;
+    }
+
+    .application > a {
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
