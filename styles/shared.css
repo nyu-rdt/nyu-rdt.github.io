@@ -128,7 +128,8 @@ a:has(.footer-icon) {
 }
 
 .bg-all-team {
-    background-image: url("../resources/all-team-cropped.jpg")
+    background-image: url("../resources/all-team-cropped2.jpg")
+    /* background-image: url("../resources/all-team-pic.jpg") */
 }
 
 .bg-arena-setup {
