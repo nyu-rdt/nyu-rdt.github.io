@@ -7,7 +7,7 @@
     <title>NYU Robotic Design Team</title>
     <link rel="icon" type="image/x-icon" href="resources/rdt-logo-black.png" style="height:50%;">
     <link rel="stylesheet" href="./styles/shared.css">
-    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/articles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="./scripts/menu_handler.js" defer></script>
     <style>
@@ -20,10 +20,10 @@
             <img src="resources/rdt-logo-white.png" class="site-logo">
             <nav>
                 <ul>
-                    <li><a href="#" class="current-page">Home</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./about.html">About</a></li>
                     <li><a href="./team.html">Team</a></li>
-                    <li><a href="./articles.html">News</a></li>
+                    <li><a href="./articles.html" class="current-page">News</a></li>
                     <li><a href="./projects.html">Projects</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
@@ -35,51 +35,43 @@
     </header>
 
     <div class="mobile-menu">
-      <a href="./index.html" class="current-page">HOME</a>
+      <a href="./index.html">HOME</a>
       <a href="./about.html">ABOUT</a></li>
       <a href="./team.html">TEAM</a>
-      <a href="./articles.html">NEWS</a>
+      <a href="./articles.html" class="current-page">NEWS</a>
       <a href="./projects.html">PROJECTS</a>
       <a href="./contact.html">CONTACT</a>
     </div>
 
-    <div class="container-fill home-splash bg-amigo-pic-01">
-      <b><span>NYU</span> ROBOTIC DESIGN TEAM</b>
-    </div>
-    
-    <div class="container">
-      <p class="tag-line">From Campus to the Cosmos: </br> Exploring Lunar Boundaries, One Robot at a Time.</p>
+    <div style="background-color: whitesmoke;" class="container">
+      <div class="container-featured">
+        <div class="featured-header">Featured</div>
+        <a target="_blank" href="https://brooklyneagle.com/articles/2023/05/02/robots-ar-and-cyber-everything-at-nyu-tandons-downtown-brooklyn-showcase/" class="featured-photo"></a>
+        <div class="featured-sidebar">NEWS</div>
+        <a target="_blank" href="https://brooklyneagle.com/articles/2023/05/02/robots-ar-and-cyber-everything-at-nyu-tandons-downtown-brooklyn-showcase/" class="featured-title">AMIGO: Celebrating Excellence</a>
+      </div>
+
+      <a target="_blank" href="https://engineering.nyu.edu/news/what-do-coney-island-and-mars-have-common-ask-nyu-robotics-design-team" class="article-item">
+        <div style="background-image: url('../resources/article_photos/coney-island-robotics-design-team.jpg');"></div>
+        <h2>What do Coney Island and Mars have in common? Ask the NYU Robotics Design Team</h2>
+        <p>July 20, 2021</p>
+      </a>
       
-      <!-- Comment the following element out when the team is NOT recruiting -->
-      <!-- <div class="application">
-        <p>We're recruiting! Apply now!</p>
-        <a href="https://nyu.qualtrics.com/jfe/form/SV_aYiVtVXWzCvvGn4">APPLY</a>
-      </div> -->
+      <a target="_blank" href="https://engineering.nyu.edu/news/robots-ar-and-cyber-everything-nyu-tandons-research-excellence-exhibit" class="article-item">
+        <div style="background-image: url('../resources/article_photos/research-exhibit.png');"></div>
+        <h2>Robots, AR, and cyber. everything at NYU Tandon's Research Execellence Exhbit</h2>
+        <p>May 2, 2023</p>
+      </a>
+
+      <a target="_blank" href="https://engineering.nyu.edu/research-innovation/student-research/vertically-integrated-projects/vip-teams/nyu-robotic-design-team" class="article-item">
+        <div style="background-image: url('../resources/article_photos/rdt-logo.jpg');"></div>
+        <h2>NYU Robotic Design Team -- Vertically Integrated Projects</h2>
+        <p></p>
+      </a>
+
     </div>
 
-    <div class="container container-directory">
-      <a class="directory-item" href="./about.html">
-        <div class="bg-amigo-pic-01">ABOUT</div>
-      </a>
-      <a class="directory-item" href="./team.html">
-        <div class="bg-team-pic-01">TEAM</div>
-      </a>
-      <a class="directory-item" href="./projects.html">
-        <div class="bg-arena-setup">PROJECTS</div>
-      </a>
-    </div>
-  
-    <div class="container container-home-buttons">
-      <!-- 
-      <a href="./contact.html">
-        <p>Join Us!</p>
-      </a>
-      <a href="./contact.html">
-        <p>Sponsor Us!</p>
-      </a>
-       -->
-    </div>
-   
+
 
     <footer>
       <div class="container container-nav">
