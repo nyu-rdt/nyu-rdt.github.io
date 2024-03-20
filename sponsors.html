@@ -7,7 +7,7 @@
     <title>NYU Robotic Design Team</title>
     <link rel="icon" type="image/x-icon" href="resources/rdt-logo-black.png" style="height:50%;">
     <link rel="stylesheet" href="./styles/shared.css">
-    <link rel="stylesheet" href="./styles/contact.css">
+    <link rel="stylesheet" href="./styles/sponsors.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="./scripts/menu_handler.js" defer></script>
     <style>
@@ -21,11 +21,10 @@
             <nav>
                 <ul>
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
                     <li><a href="./team.html">Team</a></li>
                     <li><a href="./articles.html">News</a></li>
-                    <li><a href="./projects.html" >Projects</a></li>
-                    <li><a href="./contact.html" class="current-page">Contact</a></li>
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./sponsors.html" class="current-page">Sponsors</a></li>
                 </ul>
             </nav>
             <button class="hamburger">
@@ -35,20 +34,55 @@
     </header>
 
     <div class="mobile-menu">
-      <a href="./index.html" >HOME</a>
-      <a href="./about.html">ABOUT</a></li>
+      <a href="./index.html">HOME</a>
       <a href="./team.html">TEAM</a>
       <a href="./articles.html">NEWS</a>
       <a href="./projects.html">PROJECTS</a>
-      <a href="./contact.html" class="current-page">CONTACT</a>
+      <a href="./sponsors.html" class="current-page">SPONSORS</a>
     </div>
+
+    <div style="background-color: whitesmoke; display: flex; justify-content: center; align-items: center; flex-direction: column;" class="container sponsor-list">
+        <img src="./resources/rdt-logo-black.png" style="max-width: 250px; margin-top: 20px;" >
+        <h1>Featured Sponsors</h1>
+        <div class="sponsor-item">
+            <img src="resources/rising-violets-logo.gif">
+            <div>
+                <h1>CMT Hogan</h1>
+                <p>Thank you to CMT Hogan for contributing to our project for the 2024 season!</p>
+            </div>
+        </div>
+        <div class="sponsor-item">
+            <img src="resources/nyu-logo.png">
+            <div>
+                <h1>NYU VIP Department</h1>
+                <p>Thank you to the NYU VIP Department for contributing to our project for the 2024 season!</p>
+            </div>
+        </div>
+        <div class="sponsor-item">
+            <img src="resources/nyu-logo.png">
+            <div>
+                <h1>NYU MAE Department</h1>
+                <p>Thank you to the NYU MAE Department for contributing to our project for the 2024 season!</p>
+            </div>
+        </div>
+        <div class="sponsor-item">
+            <img src="resources/nyu-logo.png">
+            <div>
+                <h1>NYU ECE Department</h1>
+                <p>Thank you to the NYU ECE Department for contributing to our project for the 2024 season!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    </div>
+    <h1 style="margin: auto; padding:0; text-align: center;">Get in touch!</h1>
 
     <div class="container form-container">
         <div >
             <img src="/resources/all-team-pic.JPG" class="form-image">
         </div>
         
-        <form id="contact-form" target="_blank" action="https://formsubmit.co/is10lmfao@gmail.com" method="POST">
+        <form id="contact-form" target="_blank" action="https://formsubmit.co/eng-rdt@nyu.edu" method="POST">
             <div class="form-row form-name">
                 <label class="form-item" for="firstname">First Name</label>
                 <label class="form-item" for="lastname">Last Name</label>
@@ -91,8 +125,10 @@
           </a>
 
         </div>
+        
         <!-- lines -->
         <div style="font-size: 15px;">
+          
           Unless otherwise noted, all content copyright NYU Robotic Design Team. All rights reserved.
         </div>
       </div>
@@ -100,11 +136,3 @@
 
   </body>
 </html>
-
-<script>
-  function submitForm() {
-    var form = document.getElementById("contact-form");
-    form.submit()
-    form.reset()
-  }
-</script>
