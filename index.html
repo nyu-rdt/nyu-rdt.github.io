@@ -1,136 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NYU Robotic Design Team</title>
-    <link rel="icon" type="image/x-icon" href="resources/rdt-logo-black.png" style="height:50%;">
-    <link rel="stylesheet" href="./styles/shared.css">
-    <link rel="stylesheet" href="./styles/home.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
-    <script src="./scripts/menu_handler.js" defer></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-    </style>
-  </head>
-  <body>
-    <header>
-        <div class="container container-nav">
-            <img src="resources/rdt-logo-white.png" class="site-logo">
-            <nav>
-                <ul>
-                    <li><a href="#" class="current-page">Home</a></li>
-                    <li><a href="./team.html">Team</a></li>
-                    <li><a href="./articles.html">News</a></li>
-                    <li><a href="./projects.html">Projects</a></li>
-                    <li><a href="./sponsors.html">Sponsors</a></li>
-                </ul>
-            </nav>
-            <button class="hamburger">
-              <div class="bar"></div>
-            </button>
-        </div> <!-- close nav container -->
-    </header>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>NYU Robotic Design Team</title><meta name="description" content="Meet NYU’s student Robotic Design Team, the Luna lunar mining robot, and the people who build it. Explore our robots, team, and ways to get involved."><link rel="icon" href="./resources/brand/favicon.ico"><link rel="preload" href="./resources/fonts/AtkinsonHyperlegibleNext-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="./styles/redesign.css"><script type="module" src="./scripts/site/redesign.js"></script></head>
+<body id="top"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="./index.html" aria-label="NYU Robotic Design Team home"><img src="./resources/redesign/rdt-logo.webp" width="120" height="51" alt="RDT"><span>New York University<br>Robotic Design Team</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden><span>Menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button><nav id="primary-nav" aria-label="Primary"><a href="#team" data-nav-target="team">Team</a><a href="#projects" data-nav-target="projects">Previous Years</a><a href="#contact" data-nav-target="contact">Contact</a></nav></div></header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-copy"><h1 id="hero-title">NYU Robotic<br>Design Team</h1><p>We design, build, and compete lunar mining robots.</p><a class="button button-light" href="#team">Meet the team <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><span class="hero-context">NASA Lunabotics · NYU Tandon</span></div>
+<figure class="hero-photo"><div class="hero-film"><img src="./resources/media/luna-showcase-poster.jpg" width="1600" height="900" alt="Luna testing on the sand at Coney Island" fetchpriority="high" draggable="false"><video id="hero-video" muted loop playsinline preload="none" data-src="./resources/media/luna-showcase-loop.mp4" aria-hidden="true" tabindex="-1" draggable="false"></video></div><figcaption><span>Luna, Coney Island &middot; Spring 2026</span></figcaption></figure>
+</section>
+<section class="mission section wrap" aria-labelledby="mission-title"><h2 id="mission-title">An ambitious robot.<br>A hands-on education.</h2><div><p>We’re a team of NYU undergraduates working across mechanical, electrical, and software engineering to take a lunar mining robot from an idea to the competition floor.</p><p>At NASA’s annual Lunabotics competition, that means digging, hauling, and depositing simulated lunar regolith. Along the way, we advance autonomous excavation research and share robotics with communities across New York City.</p></div></section>
+<section class="robot section" id="robot" aria-labelledby="robot-title"><div class="wrap robot-grid"><figure class="robot-figure"><img src="./resources/redesign/luna-cad.webp" alt="CAD rendering of the assembled Luna rover, showing its wheels, digging ladder, collection bin, and electronics" width="1100" height="900" loading="lazy" draggable="false"></figure><div class="robot-copy"><h2 id="robot-title">Meet Luna.</h2><p>Luna is our 2026 lunar mining robot, designed and built by students at NYU.</p><a class="text-link" href="https://www.youtube.com/watch?v=-IY9C2s6tIc" target="_blank" rel="noopener">Watch Luna in action <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></div></section>
+<section class="section wrap team-section" id="team" tabindex="-1" aria-label="Team"><figure class="team-photo"><img src="./resources/redesign/team-testing.webp" width="1800" height="1200" alt="RDT students gathered beside Luna on the Coney Island boardwalk" loading="lazy"><figcaption><p>The people behind Luna, from the NYU workshop to the sand at Coney Island &middot; Spring 2026</p><a class="text-link" href="https://engineering.nyu.edu/research/student-research/vertically-integrated-projects/vip-teams/nyu-robotic-design-team">Interested in applying? Learn more <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></figcaption></figure><svg class="sprite" aria-hidden="true" width="0" height="0"><symbol id="icon-person" viewBox="0 0 32 32"><circle cx="16" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 30v-1.5a11 11 0 0 1 22 0V30" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol></svg><div id="roster"><p class="roster__loading">Loading the team roster…</p></div><noscript><p>Our team includes faculty, team leadership, project management, and mechanical, electrical, and software engineering. Enable JavaScript to view the current roster, or <a href="mailto:eng-rdt@nyu.edu">email the team</a>.</p></noscript></section>
+      <!-- ==================== 02 · PROJECTS ==================== -->
+      <section class="pg-section pg-section--tint" id="projects" tabindex="-1"
+               aria-labelledby="projects-title">
+        <div class="wrap">
+          <div class="pg-head">
 
-    <div class="mobile-menu">
-      <a href="./index.html" class="current-page">HOME</a>
-      <a href="./team.html">TEAM</a>
-      <a href="./articles.html">NEWS</a>
-      <a href="./projects.html">PROJECTS</a>
-      <a href="./sponsors.html">SPONSORS</a>
-    </div>
+            <h2 class="pg-head__title" id="projects-title">Previous years</h2>
+          </div>
 
-    <div class="container-fill home-splash bg-amigo-pic-01">
-      <b><span>NYU</span> ROBOTIC DESIGN TEAM</b>
-    </div>
-    
-    <div class="container">
-      <p class="tag-line">From Campus to the Cosmos: </br> Exploring Lunar Boundaries, One Robot at a Time.</p>
-      
-      <!-- Comment the following element out when the team is NOT recruiting -->
-      <!-- <div class="application">
-        <p>We're recruiting until April 12th! Apply now!</p>
-        <p>Decisions will be returned by April 30th</p>
-        <a href="https://nyu.qualtrics.com/jfe/form/SV_aYiVtVXWzCvvGn4">APPLY</a>
-      </div> -->
-    </div>
+          <div class="pg-projects">
+            <article class="pg-project">
 
-    <div class="container container-directory" style="margin-bottom: 50px;">
-      <a class="directory-item" href="./articles.html">
-        <div class="bg-amigo-pic-01">NEWS</div>
-      </a>
-      <a class="directory-item" href="./team.html">
-        <div class="bg-team-pic-01">TEAM</div>
-      </a>
-      <a class="directory-item" href="./projects.html">
-        <div class="bg-arena-setup">PROJECTS</div>
-      </a>
-    </div>
+              <h3 class="pg-project__name">LUNA</h3>
+              <dl class="spec">
+                <dt>Season</dt><dd>2025 &mdash; 2026</dd>
+                <dt>Competition</dt><dd>NASA Lunabotics 2026</dd>
+                <dt>Disciplines</dt><dd>Mechanical &middot; Electrical &middot; Software</dd>
+                <dt>Record</dt><dd><a class="link" href="https://www.youtube.com/watch?v=-IY9C2s6tIc" target="_blank" rel="noopener">Proof of life (video)</a></dd>
+              </dl>
 
-    <div class="container-fill" style="background-color: var(--rdt-purple); color: white;">
-      <section class="container container-section" style="margin-block: 0;">
-          <img class="section-image" src="./resources/old-team-pic.JPG">
-          <div class="section-content">
-              <div class="section-title">WHO WE ARE</div>
-              <div class="section-text">The NYU Robotic Design Team is a collegiate organization committed to designing & engineering an extraterrestrial mining robot for NASA's annual Lunabotics Competition. Each year, we integrate mechanical, electrical, and software disciplines to create a new robot.
+              <figure class="pg-project__photo">
+                <img src="./resources/media/team/team-2025-26-luna.jpg" alt="The 2025–26 team on the Wunsch Hall steps"
+                     width="1340" height="740" loading="lazy" decoding="async">
+                <figcaption class="label">The LUNA season team &nbsp;&middot;&nbsp; Fall 2025</figcaption>
+              </figure>
+
+            </article>
+
+            <article class="pg-project">
+
+              <h3 class="pg-project__name">TALOS</h3>
+              <dl class="spec">
+                <dt>Season</dt><dd>2024 &mdash; 2025</dd>
+                <dt>Competition</dt><dd>NASA Lunabotics 2025</dd>
+                <dt>Disciplines</dt><dd>Mechanical &middot; Electrical &middot; Software</dd>
+                <dt>Record</dt><dd><a class="link" href="https://www.youtube.com/watch?v=dLKOKua0ePg" target="_blank" rel="noopener">Proof of life (video)</a></dd>
+              </dl>
+              <figure class="pg-project__photo">
+                <img src="./resources/media/team/team-2024-25-talos.jpg" alt="The 2024–25 team on the Wunsch Hall steps"
+                     width="1600" height="1067" loading="lazy" decoding="async">
+                <figcaption class="label">The TALOS season team &nbsp;&middot;&nbsp; Fall 2024</figcaption>
+              </figure>
+            </article>
+
+            <article class="pg-project">
+
+              <h3 class="pg-project__name">TITAN</h3>
+              <dl class="spec">
+                <dt>Season</dt><dd>2023 &mdash; 2024</dd>
+                <dt>Competition</dt><dd>NASA Lunabotics 2024</dd>
+                <dt>Disciplines</dt><dd>Mechanical &middot; Electrical &middot; Software</dd>
+                <dt>Record</dt><dd><a class="link" href="https://www.youtube.com/watch?v=20tFcUkBZsE" target="_blank" rel="noopener">Proof of life (video)</a></dd>
+              </dl>
+              <figure class="pg-project__photo">
+                <img src="./resources/media/team/team-2023-24-titan.jpg" alt="The 2023–24 team"
+                     width="1600" height="1109" loading="lazy" decoding="async">
+                <figcaption class="label">The TITAN season team</figcaption>
+              </figure>
+            </article>
+
+            <article class="pg-project">
+
+              <h3 class="pg-project__name">A.M.I.G.O.</h3>
+              <dl class="spec">
+                <dt>Season</dt><dd>2022 &mdash; 2023</dd>
+                <dt>Competition</dt><dd>NASA Lunabotics 2023</dd>
+                <dt>Disciplines</dt><dd>Mechanical &middot; Electrical &middot; Software</dd>
+                <dt>Record</dt><dd><a class="link" href="https://www.youtube.com/watch?v=NHGFNLLDJk4" target="_blank" rel="noopener">Proof of life (video)</a></dd><dt>Acronym</dt><dd>Autonomous Machine In Galactic Operations</dd>
+              </dl>
+            <figure class="pg-project__photo"><img src="./resources/amigo-pic-01.jpg" alt="A.M.I.G.O. robot" loading="lazy" decoding="async"><figcaption>A.M.I.G.O. robot</figcaption></figure></article>
+
+            <article class="pg-project">
+
+              <h3 class="pg-project__name">A.S.T.R.O.</h3>
+              <dl class="spec">
+                <dt>Season</dt><dd>2021 &mdash; 2022</dd>
+                <dt>Competition</dt><dd>NASA Lunabotics 2022</dd>
+                <dt>Disciplines</dt><dd>Mechanical &middot; Electrical &middot; Software</dd>
+                <dt>Record</dt><dd><a class="link" href="https://www.youtube.com/watch?v=6MSYlTj9N_c" target="_blank" rel="noopener">Proof of life (video)</a></dd><dt>Acronym</dt><dd>&mdash;</dd>
+              </dl>
+              <figure class="pg-project__photo">
+                <img src="./resources/media/team/team-2021-22-astro.jpg" alt="The 2021–22 team on the Wunsch Hall steps"
+                     width="1600" height="1067" loading="lazy" decoding="async">
+                <figcaption class="label">The ASTRO season team &nbsp;&middot;&nbsp; Spring 2022</figcaption>
+              </figure>
+            </article>
+
+            <article class="pg-project">
+
+              <h3 class="pg-project__name">P.I.P.E.R.</h3>
+              <dl class="spec">
+                <dt>Season</dt><dd>2020 &mdash; 2021</dd>
+                <dt>Competition</dt><dd>NASA Lunabotics 2021</dd>
+                <dt>Disciplines</dt><dd>Mechanical &middot; Electrical &middot; Software</dd><dt>Acronym</dt><dd>Project: Inter Planetary Excavating Rover</dd>
+              </dl>
+            <figure class="pg-project__photo"><img src="./resources/piper-image-02.jpg" alt="P.I.P.E.R. robot" loading="lazy" decoding="async"><figcaption>P.I.P.E.R. robot</figcaption></figure></article>
+          </div>
+
+          <div class="pg-prevyears">
+            <div class="doc-head">
+
+              <h3 class="doc-head__title" id="prevyears-title">Earlier seasons</h3>
+              <span class="doc-head__meta">Team record</span>
+            </div>
+            <ul class="pg-prevyears__grid" aria-labelledby="prevyears-title">
+              <li>
+                <img src="./resources/media/team/team-2017-18.jpg" alt="The 2017–18 team"
+                     width="1600" height="1067" loading="lazy" decoding="async">
+                <!-- Semester estimated from the 2017–18 archive label; capture date unavailable. -->
+                <p class="label">Spring 2018</p>
+              </li>
+              <li>
+                <img src="./resources/media/team/team-2019.jpg" alt="The 2019 team"
+                     width="962" height="574" loading="lazy" decoding="async">
+                <!-- Semester estimated from the 2019 archive label; capture date unavailable. -->
+                <p class="label">Fall 2019</p>
+              </li>
+              <li>
+                <img src="./resources/media/team/team-2020-21-piper.jpg" alt="The team outside 5 MetroTech Center"
+                     width="1600" height="900" loading="lazy" decoding="async">
+                <!-- Semester estimated from the 2020–21 archive label; capture date unavailable. -->
+                <p class="label">Spring 2021</p>
+              </li>
+            </ul>
+          </div>
+
+          <p class="label pg-projects__more">
+            Earlier machines (ORBIT, ATLAS) live on the
+            <a class="link" href="https://www.youtube.com/@roboticdesignteamnyurdt4891/videos" target="_blank" rel="noopener">team's channel</a>.
+          </p>
+        </div>
+      </section>
+
+
+<section class="contact section" id="contact" tabindex="-1" aria-labelledby="contact-title"><div class="wrap"><div class="contact-grid"><div class="contact-intro"><h2 id="contact-title">Let’s build<br>something together.</h2><p>Interested in joining, supporting a season, or connecting with the team? We’d like to hear from you.</p><a class="contact-email" href="mailto:eng-rdt@nyu.edu">eng-rdt@nyu.edu</a><p class="contact-location">NYU Tandon School of Engineering<br>325 Gold St, Brooklyn, NY 11201</p></div><form class="contact__form" action="https://formsubmit.co/eng-rdt@nyu.edu"
+                  method="POST" target="_blank" aria-label="Contact the team">
+              <div class="contact__row">
+                <div class="field">
+                  <label for="firstname">First name</label>
+                  <input type="text" id="firstname" name="firstname" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="lastname">Last name</label>
+                  <input type="text" id="lastname" name="lastname" autocomplete="family-name" required>
+                </div>
               </div>
-          </div>
-      </section>
-    </div>
 
-      <section class="container container-section"  style="margin-block: 0;">
-          <div class="section-content">
-              <div class="section-title">OUR MISSION</div>
-              <div class="section-text">Our mission is to create innovative robots for the advancement of the field, while having a positive impact on our school and community.</div>
-          </div>
-          <img class="section-image" src="./resources/rdt-logo-black.png" style="object-fit: contain;">
-      </section>
-    
-    <div class="container-fill" style="background-color: var(--rdt-purple); color: white;">
-      <section class="container container-section"  style="margin-block: 0;">
-          <img class="section-image" src="./resources/amigo-pic-01.jpg" style="object-fit: cover; object-position: right;">
-          <div class="section-content">
-              <div class="section-title">The Competition</div>
-              <div class="section-text">NASA's Lunabotics Competition is an annual showcase of problem solving and engineering to promote the research of lunar excavation and construction. We enthusiastically participate each year, engaging in direct competition with other collegiate teams from across the nation.</div>
-          </div>
-      </section>
-    </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
 
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us how you’d like to get involved" required></textarea>
+              </div>
 
-
-    <footer>
-      <div class="container container-nav">
-        <img src="resources/tandon_long_white.png" class="tandon-logo">
-      </div>
-
-      <div class="container container-footer">
-        <!-- social media -->
-        <div>
-          <!-- linkedin -->
-          <a  href="https://www.linkedin.com/company/nyu-robotic-design-team" >
-            <img src="resources/icons/linkedin-icon.png" class="footer-icon">
-          </a>
-          
-          <!-- insta -->
-          <a  href="https://www.instagram.com/nyurdt/">
-            <img src="resources/icons/insta-icon.png" class="footer-icon">
-          </a>
-
-          <!-- email -->
-          <a  href="mailto:nyu-rdt@nyu.edu">
-            <img src="resources/icons/email-icon.png" class="footer-icon">
-          </a>
-
-        </div>
-        
-        <!-- lines -->
-        <div style="font-size: 15px;">
-          
-          Unless otherwise noted, all content copyright NYU Robotic Design Team. All rights reserved.
-        </div>
-      </div>
-    </footer>
-
-  </body>
-</html>
+              <button class="button" type="submit">Send message <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            </form></div><div class="support" id="sponsors"><div><h3>Support the next build.</h3><p>To discuss sponsorship, equipment, or other ways to support the team, send us a message. Thank you to the organizations backing our work.</p></div><ul aria-label="Our supporters"><li>CMT Hogan</li><li>NYU VIP Department</li><li>NYU MAE Department</li><li>NYU ECE Department</li></ul></div></div></section>
+</main><footer class="site-footer"><div class="wrap"><div class="footer-main"><div><a class="footer-name" href="./index.html">NYU Robotic Design Team</a><p>NYU Tandon School of Engineering<br>325 Gold St, Brooklyn, NY 11201</p><a href="mailto:eng-rdt@nyu.edu">eng-rdt@nyu.edu</a></div><nav aria-label="Footer"><a href="./news.html">News &amp; publications</a><a href="https://www.instagram.com/nyurdt/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@roboticdesignteamnyurdt4891" target="_blank" rel="noopener">YouTube</a><a href="https://www.linkedin.com/company/nyu-robotic-design-team" target="_blank" rel="noopener">LinkedIn</a></nav></div><div class="footer-bottom"><span>A Vertically Integrated Project at NYU Tandon.</span><p>© NYU Robotic Design Team. All rights reserved.</p></div></div></footer><script type="module" src="./scripts/site/sections.js"></script></body></html>

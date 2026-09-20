@@ -1,0 +1,122 @@
+{
+  "sys_locomotion": [
+    {
+      "label": "Wheel Assembly ×4",
+      "position": [
+        -0.1887,
+        0.134,
+        0.0872
+      ]
+    },
+    {
+      "label": "MAX Planetary Gearbox ×2",
+      "position": [
+        -0.1856,
+        0.134,
+        -0.0829
+      ]
+    },
+    {
+      "label": "Roller Chain Drive",
+      "position": [
+        0.1477,
+        0.1066,
+        -0.324
+      ]
+    },
+    {
+      "label": "Frame Rail",
+      "position": [
+        0,
+        0.134,
+        -0.3239
+      ]
+    }
+  ],
+  "sys_excavation": [
+    {
+      "label": "Bucket Ladder",
+      "position": [
+        -0.2035,
+        0.3654,
+        -0.1556
+      ]
+    },
+    {
+      "label": "Excavation Chain ×2",
+      "position": [
+        -0.2116,
+        0.3464,
+        -0.0836
+      ]
+    },
+    {
+      "label": "Horizontal Support",
+      "position": [
+        -0.2541,
+        0.2287,
+        -0.3168
+      ]
+    },
+    {
+      "label": "Intel RealSense Camera",
+      "position": [
+        -0.2687,
+        0.6046,
+        -0.3277
+      ]
+    }
+  ],
+  "sys_deposition": [
+    {
+      "label": "Conveyor Chain",
+      "position": [
+        -0.0036,
+        0.134,
+        0.0003
+      ]
+    },
+    {
+      "label": "Deposition Frame",
+      "position": [
+        0.0856,
+        0.1867,
+        -0.1607
+      ]
+    },
+    {
+      "label": "Load Cell ×4",
+      "position": [
+        -0.1276,
+        0.2021,
+        -0.2832
+      ]
+    }
+  ],
+  "sys_ee_box": [
+    {
+      "label": "EE Box",
+      "position": [
+        0.1635,
+        0.3955,
+        -0.1607
+      ]
+    },
+    {
+      "label": "EE Box Cover",
+      "position": [
+        0.1635,
+        0.4537,
+        -0.1607
+      ]
+    },
+    {
+      "label": "Deposition Connector ×2",
+      "position": [
+        0.1634,
+        0.3245,
+        0.0056
+      ]
+    }
+  ]
+}

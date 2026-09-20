@@ -1,0 +1,653 @@
+/* =============================================================================
+   systems.css — homepage: identity hero + scroll-scrubbed exploded view of Luna.
+   Loads AFTER styles/site.css and owns nothing but the stage.
+
+   site.css is authoritative for tokens, @font-face and the black-band chrome;
+   every custom property below is read through var(--token, <DESIGN.md value>)
+   so this page still renders correctly if it is ever loaded on its own.
+   ========================================================================== */
+
+.systems-page {
+  --sys-paper:    var(--paper,    #ffffff);
+  --sys-ink:      var(--ink,      #0a0a0a);
+  --sys-ink-60:   var(--ink-60,   #5a5a5a);
+  --sys-hairline: var(--hairline, #dedede);
+  --sys-violet:   var(--violet,   #57068c);
+  /* brand violet is too dark to read on video/near-black; this is the same hue
+     lifted into a legible range, used only in the hero */
+  --sys-violet-lift: #c79bef;
+  --sys-mono:     var(--font-mono, ui-monospace, "Cascadia Mono", Consolas, monospace);
+  --sys-label:    var(--t-label,  0.6875rem);
+
+  /* measured at runtime by main.js; these keep the layout sane pre-JS */
+  --sys-header-h: var(--header-h, 4rem);
+  /* Full-bleed: the fixed masthead floats over the stage, so the stage owns
+     the whole viewport and in-stage furniture offsets itself below the bar. */
+  --sys-stage-h: 100svh;
+  --sys-track-h: 800svh;
+
+  /* per-frame scrub outputs, written by main.js */
+  --sys-intro-t: 1;
+  --sys-panel-t: 0;
+  --sys-progress: 0;
+
+  --sys-gutter: 2.9rem;
+}
+
+/* second skip link, offset so it doesn't stack on site.css's */
+.skip-link--alt { left: calc(var(--pad) + 12rem); }
+
+/* ============================ SCROLL STAGE ================================ */
+
+.sys-scroll {
+  position: relative;
+  height: var(--sys-track-h);
+  background: var(--sys-paper);
+}
+
+.sys-stage {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: var(--sys-stage-h);
+  overflow: hidden;
+  background: var(--sys-paper);
+}
+
+/* ------------------------------- hero video ------------------------------- */
+/* The video is the bottom layer; the (opaque, white-cleared) canvas fades up
+   over it as the explosion begins. Both are driven by scroll progress. */
+
+.sys-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #050505;         /* covers the gap before the poster decodes */
+  opacity: var(--sys-hero-t, 1);
+}
+.sys-hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Bottom-left scrim, not full-frame darkening. Alpha is set so white text
+   clears 4.5:1 even against the brightest sand frame: at 0.85 over a near-white
+   background the composite luminance lands ~0.14, i.e. ~5.5:1. */
+.sys-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(135% 115% at 2% 100%,
+      rgba(5, 5, 5, 0.90) 0%,
+      rgba(5, 5, 5, 0.86) 52%,
+      rgba(5, 5, 5, 0.45) 74%,
+      rgba(5, 5, 5, 0) 92%),
+    linear-gradient(to top, rgba(5, 5, 5, 0.55) 0%, rgba(5, 5, 5, 0) 45%),
+    /* top band: keeps the transparent masthead's white nav legible over sand */
+    linear-gradient(to bottom, rgba(5, 5, 5, 0.55) 0%, rgba(5, 5, 5, 0) 16%);
+}
+
+.sys-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: var(--sys-canvas-t, 1);
+}
+
+.sys-callouts {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 3;
+}
+.sys-callouts .co-line {
+  fill: none;
+  stroke: var(--sys-ink);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.sys-callouts .co-dot { fill: var(--sys-ink); }
+.sys-callouts .co-ring { fill: none; stroke: var(--sys-ink); stroke-width: 1; }
+.sys-callouts .co-rule { stroke: var(--sys-ink); stroke-width: 1; }
+.sys-callouts .co-label {
+  fill: var(--sys-ink);
+  font-family: var(--sys-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  /* paper halo: keeps the label legible when a ghosted part sits behind it */
+  paint-order: stroke fill;
+  stroke: var(--sys-paper);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.sys-callouts .co-balloon {
+  fill: var(--sys-paper);
+  stroke: var(--sys-ink);
+  stroke-width: 1;
+}
+.sys-callouts .co-index {
+  fill: var(--sys-violet);
+  font-family: var(--sys-mono);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+/* ------------------------- drawing-sheet furniture ------------------------ */
+
+/* The drawing sheet belongs to the breakdown, not the hero: it fades in as the
+   explosion starts. `data-hero` (set by main.js once the fade has finished)
+   takes the chrome out of the tab order while it is invisible. */
+:where(.sys-frame, .sys-titleblock, .sys-readout, .sys-rail, .sys-progress) {
+  opacity: var(--sys-sheet-t, 1);
+}
+.sys-stage[data-hero="1"] :where(.sys-frame, .sys-titleblock, .sys-readout,
+                                 .sys-rail, .sys-progress) { visibility: hidden; }
+
+.sys-frame { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.sys-tick { position: absolute; width: 15px; height: 15px; opacity: 0.45; }
+.sys-tick::before,
+.sys-tick::after { content: ""; position: absolute; background: var(--sys-ink); }
+.sys-tick::before { width: 100%; height: 1px; top: 0; }
+.sys-tick::after { width: 1px; height: 100%; left: 0; }
+.sys-tick--tl { top: 20px; left: 20px; }
+.sys-tick--tr { top: 20px; right: 20px; transform: scaleX(-1); }
+.sys-tick--bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
+.sys-tick--br { bottom: 20px; right: 20px; transform: scale(-1); }
+
+.sys-titleblock {
+  position: absolute;
+  top: calc(var(--sys-header-h) + 0.9rem); /* clear the fixed masthead */
+  left: var(--sys-gutter);
+  z-index: 4;
+  display: grid;
+  gap: 3px;
+  pointer-events: none;
+}
+.sys-titleblock__row {
+  font-family: var(--sys-mono);
+  font-size: var(--sys-label);
+  line-height: 1.45;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--sys-ink);
+  /* paper halo — model geometry can pass behind the sheet furniture */
+  text-shadow: 0 0 2px var(--sys-paper), 0 0 6px var(--sys-paper), 0 0 10px var(--sys-paper);
+}
+.sys-titleblock__row.is-dim { color: var(--sys-ink-60); letter-spacing: 0.12em; }
+
+.sys-readout {
+  position: absolute;
+  top: calc(var(--sys-header-h) + 0.9rem); /* clear the fixed masthead */
+  right: var(--sys-gutter);
+  z-index: 4;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1px 0.85rem;
+  text-align: right;
+  pointer-events: none;
+}
+.sys-readout__k,
+.sys-readout__v {
+  font-family: var(--sys-mono);
+  font-size: var(--sys-label);
+  line-height: 1.5;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px var(--sys-paper), 0 0 6px var(--sys-paper), 0 0 10px var(--sys-paper);
+}
+.sys-readout__k { color: var(--sys-ink-60); }
+.sys-readout__v { color: var(--sys-ink); font-variant-numeric: tabular-nums; letter-spacing: 0.1em; }
+
+/* -------------------------------- intro ---------------------------------- */
+
+/* Identity hero: white type over the video scrim, anchored bottom-left inside
+   the scrim's strong zone so the contrast floor holds on any frame. */
+.sys-intro {
+  position: absolute;
+  left: var(--sys-gutter);
+  right: var(--sys-gutter);
+  bottom: clamp(2.4rem, 7vh, 5rem);
+  z-index: 4;
+  max-width: min(62ch, 84vw);
+  pointer-events: none;
+  color: #fff;
+  opacity: var(--sys-intro-t);
+  transform: translateY(calc((1 - var(--sys-intro-t)) * 14px));
+  will-change: opacity, transform;
+}
+.sys-intro a { pointer-events: auto; }
+
+/* Logo lockup: RDT mark over the Tandon long wordmark, no joining glyphs. */
+.sys-intro__logos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.15rem;
+  margin: 0 0 1.4rem;
+}
+.sys-intro__logos img {
+  display: block;
+  width: auto;
+  filter: drop-shadow(0 1px 8px rgba(0, 0, 0, 0.35));
+}
+.sys-intro__logo-rdt { height: clamp(3.2rem, 7vw, 5rem); }
+
+.sys-intro__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.9rem;
+  margin: 1.5rem 0 0;
+  font-family: var(--sys-mono);
+  font-size: var(--sys-label);
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+.sys-intro__cta a {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: border-color var(--dur, 200ms) var(--ease, ease);
+}
+.sys-intro__cta a:hover { border-bottom-color: #fff; }
+.sys-intro__cta a:focus-visible {
+  outline: 2px solid #fff;          /* white ring: violet can't hold over video */
+  outline-offset: 4px;
+  border-bottom-color: transparent;
+}
+.sys-intro__sep { color: rgba(255, 255, 255, 0.45); }
+
+/* ------------------------------ phase rail ------------------------------- */
+/* Horizontal sheet index along the bottom — keeps the whole left gutter free
+   for the callout labels. */
+
+.sys-rail {
+  position: absolute;
+  left: var(--sys-gutter);
+  bottom: 2.6rem;
+  z-index: 6;
+}
+.sys-rail ol {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sys-rail li { display: block; }
+.sys-rail a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem 0.5rem 0;
+  text-decoration: none;
+  color: var(--sys-ink-60);
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur, 200ms) var(--ease, ease);
+}
+.sys-rail b,
+.sys-rail span {
+  font-family: var(--sys-mono);
+  font-size: var(--sys-label);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.sys-rail b { font-variant-numeric: tabular-nums; opacity: 0.5; transition: opacity 200ms; }
+.sys-rail span {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: max-width 320ms var(--ease, ease), opacity 220ms var(--ease, ease);
+}
+.sys-rail a:hover,
+.sys-rail a:focus-visible,
+.sys-rail a.is-active { color: var(--sys-ink); }
+.sys-rail a.is-active { border-bottom-color: var(--sys-violet); }
+.sys-rail a.is-active b { opacity: 1; }
+.sys-rail a:hover span,
+.sys-rail a:focus-visible span,
+.sys-rail a.is-active span { max-width: 12ch; opacity: 1; }
+
+/* ------------------------------- progress -------------------------------- */
+
+.sys-progress {
+  position: absolute;
+  left: var(--sys-gutter);
+  right: var(--sys-gutter);
+  bottom: 1.35rem;
+  height: 1px;
+  background: var(--sys-hairline);
+  pointer-events: none;
+  z-index: 4;
+}
+.sys-progress i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--sys-ink);
+  transform-origin: left center;
+  transform: scaleX(var(--sys-progress));
+}
+
+.sys-nowebgl {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  max-width: 34ch;
+  text-align: center;
+  color: var(--sys-ink-60);
+}
+.sys-nowebgl[hidden] { display: none; }
+
+/* ---------------------------- scroll sections ---------------------------- */
+/* Real headings spanning the scrub range: the screen-reader and in-page-anchor
+   route through the timeline. Visually silent — the sticky stage is the visual. */
+
+.sys-sections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(100% - var(--sys-stage-h));
+  z-index: 1;
+  pointer-events: none;
+}
+.sys-sections section {
+  position: relative;
+  scroll-margin-top: var(--sys-header-h);
+}
+.sys-sections :where(h2, p) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.sys-sections section:focus-visible { outline: none; }
+
+/* ================================ PANEL =================================== */
+
+.sys-panel {
+  position: absolute;
+  right: var(--sys-gutter);
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 5;
+  width: min(23rem, 33vw);
+  max-height: min(70%, 40rem);
+  overflow-y: auto;
+  padding-right: 2px;
+  opacity: var(--sys-panel-t);
+  transform: translateX(calc((1 - var(--sys-panel-t)) * 26px));
+  will-change: opacity, transform;
+  scrollbar-width: none;              /* DESIGN.md: hidden scrollbars everywhere */
+}
+.sys-panel::-webkit-scrollbar { display: none; }
+.sys-panel[data-empty="true"] { pointer-events: none; }
+
+.sys-panel__no {
+  margin: 0;
+  font-family: var(--sys-mono);
+  font-size: var(--sys-label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sys-ink-60);
+  font-variant-numeric: tabular-nums;
+}
+.sys-panel__title {
+  margin: 0.8rem 0 0;
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  font-weight: var(--w-display, 250);
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.sys-panel__rule { height: 1px; background: var(--sys-ink); margin: 1rem 0 0.9rem; }
+.sys-panel__role {
+  margin: 0;
+  font-size: var(--t-small, 0.9375rem);
+  font-weight: var(--w-light, 300);
+  line-height: 1.62;
+  color: var(--sys-ink-60);
+}
+.sys-panel__teams {
+  margin: 1rem 0 0;
+  font-family: var(--sys-mono);
+  font-size: var(--sys-label);
+  line-height: 1.7;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sys-ink);
+}
+.sys-panel__people {
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--sys-hairline);
+}
+
+.sys-person {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0 0.9rem;
+  align-items: start;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--sys-hairline);
+}
+/* One shared line-art mark (#icon-person) stands in for every person, except
+   the few leadership entries whose data carries an opt-in photo. */
+.sys-person__fig {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #f6f6f6;
+  border: 1px solid var(--sys-hairline);
+  color: var(--sys-ink-60);
+  overflow: hidden;
+}
+.sys-person__avatar {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  overflow: visible;
+}
+.sys-person__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sys-person__body { display: block; min-width: 0; }
+.sys-person__name {
+  display: block;
+  font-size: var(--t-small, 0.9375rem);
+  font-weight: var(--w-body, 350);
+  line-height: 1.3;
+}
+.sys-person__pos {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--sys-mono);
+  font-size: var(--sys-label);
+  line-height: 1.45;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--sys-violet);
+}
+.sys-person__major {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.8125rem;
+  font-weight: var(--w-light, 300);
+  line-height: 1.45;
+  color: var(--sys-ink-60);
+}
+/* closing "Mission Operations" panel: wider, centred, multi-column */
+.sys-panel.is-closing {
+  width: min(52rem, 78vw);
+  max-height: min(76%, 44rem);
+  right: 50%;
+  translate: 50% -50%;
+  transform: translateY(calc((1 - var(--sys-panel-t)) * 16px));
+  padding: clamp(1.1rem, 2.2vw, 1.9rem);
+  background: color-mix(in srgb, var(--sys-paper) 90%, transparent);
+  backdrop-filter: blur(3px);
+  border: 1px solid var(--sys-hairline);
+}
+.sys-panel.is-closing .sys-panel__people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  column-gap: 1.6rem;
+  border-top-color: var(--sys-ink);
+}
+.sys-panel.is-closing .sys-panel__role { max-width: 58ch; }
+
+/* ================================ PERF HUD ================================ */
+/* ?perf=1 only — main.js creates this element and nothing else references it. */
+
+.sys-perf {
+  position: absolute;
+  left: var(--sys-gutter);
+  top: calc(var(--sys-header-h) + 3rem);
+  z-index: 7;
+  padding: 0.3rem 0.5rem;
+  font-family: var(--sys-mono);
+  font-size: 10.5px;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  color: var(--sys-ink);
+  background: color-mix(in srgb, var(--sys-paper) 88%, transparent);
+  border: 1px solid var(--sys-hairline);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* =============================== NO WEBGL ================================= */
+
+.systems-page.no-webgl { --sys-track-h: auto; }
+.systems-page.no-webgl .sys-scroll { height: auto; }
+.systems-page.no-webgl .sys-stage {
+  position: relative;
+  top: 0;
+  height: auto;
+  padding: clamp(2.5rem, 8vw, 5.5rem) var(--pad, 2rem);
+  border-bottom: 1px solid var(--sys-hairline);
+}
+.systems-page.no-webgl :where(.sys-canvas, .sys-callouts, .sys-rail, .sys-panel,
+                              .sys-progress, .sys-readout, .sys-frame, .sys-sections) { display: none; }
+.systems-page.no-webgl .sys-titleblock { position: static; margin-bottom: 2rem; }
+.systems-page.no-webgl .sys-intro {
+  position: static;
+  translate: none;
+  transform: none;
+  opacity: 1;
+  max-width: 44ch;
+}
+.systems-page.no-webgl .sys-nowebgl {
+  position: static;
+  translate: none;
+  text-align: left;
+  max-width: 44ch;
+  margin-top: 1.8rem;
+}
+
+/* ============================== RESPONSIVE ================================ */
+
+@media (max-width: 900px) {
+  .systems-page { --sys-gutter: 1.15rem; }
+
+  /* Same resting spot as the primary skip link (fully off-viewport); on focus
+     it drops BELOW the primary link's slot instead of onto it. Overriding
+     `top` here would leave the hidden state peeking into the viewport. */
+  .skip-link--alt { left: var(--pad); }
+  .skip-link--alt:focus-visible { transform: translateY(3.4rem); }
+
+  .sys-tick { display: none; }
+  /* cap the title block so its rows wrap inside their own column instead of
+     running under the right-aligned readout */
+  .sys-titleblock { top: calc(var(--sys-header-h) + 0.6rem); max-width: 52vw; }
+  .sys-titleblock__row { letter-spacing: 0.12em; }
+  .sys-readout { top: calc(var(--sys-header-h) + 0.6rem); }
+
+  /* Hero stacks the same way; the video scrim replaces the old paper scrim, so
+     the CTAs sit above the fold and the type stays white. */
+  .sys-intro {
+    bottom: clamp(1.6rem, 4vh, 2.6rem);
+    max-width: none;
+  }
+  .sys-intro__logos { gap: 0.7rem; margin-bottom: 0.75rem; }
+  .sys-intro__logo-rdt { height: clamp(2.3rem, 10.5vw, 3rem); }
+  .sys-intro__cta { margin-top: 1.05rem; }
+  .sys-intro__cta a { padding: 0.2rem 0 4px; }   /* taller tap target */
+
+  .sys-perf { white-space: normal; max-width: calc(100% - 2 * var(--sys-gutter)); }
+  /* narrower frame → pull the scrim's strong zone further up the stage */
+  .sys-hero__scrim {
+    background:
+      radial-gradient(180% 105% at 0% 100%,
+        rgba(5, 5, 5, 0.91) 0%,
+        rgba(5, 5, 5, 0.88) 58%,
+        rgba(5, 5, 5, 0.5) 78%,
+        rgba(5, 5, 5, 0) 95%),
+      linear-gradient(to top, rgba(5, 5, 5, 0.6) 0%, rgba(5, 5, 5, 0) 52%);
+  }
+
+  /* rail moves up top so the bottom sheet can't bury it */
+  .sys-rail { bottom: auto; top: calc(var(--sys-header-h) + 2.2rem); left: calc(var(--sys-gutter) - 0.1rem); }
+  .sys-rail a { padding: 0.4rem 0.55rem 0.4rem 0; }
+  .sys-rail span { display: none; }
+
+  .sys-progress { bottom: 0.9rem; }
+
+  .sys-panel,
+  .sys-panel.is-closing {
+    right: 0;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    translate: none;
+    width: auto;
+    max-height: 46svh;
+    padding: 1rem var(--pad, 1.25rem) 2.6rem;
+    background: color-mix(in srgb, var(--sys-paper) 93%, transparent);
+    backdrop-filter: blur(3px);
+    border: 0;
+    border-top: 1px solid var(--sys-ink);
+    transform: translateY(calc((1 - var(--sys-panel-t)) * 22px));
+  }
+  .sys-panel.is-closing .sys-panel__people { grid-template-columns: 1fr; }
+  .sys-panel__title { font-size: 1.35rem; }
+  .sys-panel__rule { margin: 0.7rem 0 0.6rem; }
+
+}
+
+@media (max-width: 600px) {
+  /* the DWG flavor row is drawing-sheet furniture (aria-hidden); at phone
+     widths it wraps to three lines and crowds the phase rail — drop it */
+  .sys-titleblock__row.is-dim { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sys-rail a,
+  .sys-rail span,
+  .sys-rail b { transition: none; }
+}

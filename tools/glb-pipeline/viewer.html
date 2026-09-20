@@ -1,0 +1,158 @@
+<!doctype html>
+<!--
+  Pipeline QA viewer — NOT part of the site. Used to verify the built GLBs actually load in
+  three.js (meshopt + quantization + webp), that the sys_* groups exist and are independently
+  movable, and to eyeball simplification quality.
+
+  http://127.0.0.1:5500/tools/glb-pipeline/viewer.html?model=/models/luna-rover.glb
+      &explode=0..1   translate each group along its explodeDir
+      &view=iso|front|side|top
+      &wire=1         wireframe (shows tessellation density)
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GLB pipeline QA</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #fff; }
+    canvas { display: block; }
+    #hud {
+      position: fixed; top: 0; left: 0; padding: 10px 14px; font: 11px/1.6 ui-monospace, Consolas, monospace;
+      color: #0A0A0A; white-space: pre; text-transform: uppercase; letter-spacing: .04em;
+    }
+    #err { position: fixed; top: 0; left: 0; padding: 14px; font: 13px/1.5 ui-monospace, monospace; color: #b00; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+<div id="hud">loading…</div>
+<script type="importmap">
+{ "imports": {
+    "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const qs = new URLSearchParams(location.search);
+const MODEL = qs.get('model') || '/models/luna-rover.glb';
+const EXPLODE = parseFloat(qs.get('explode') || '0');
+const VIEW = qs.get('view') || 'iso';
+const WIRE = qs.get('wire') === '1';
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xffffff);
+const camera = new THREE.PerspectiveCamera(35, innerWidth / innerHeight, 0.01, 100);
+const controls = new OrbitControls(camera, renderer.domElement);
+
+scene.add(new THREE.HemisphereLight(0xffffff, 0xb0b0b0, 2.2));
+const key = new THREE.DirectionalLight(0xffffff, 2.0); key.position.set(1, 1.4, 1); scene.add(key);
+const fill = new THREE.DirectionalLight(0xffffff, 0.8); fill.position.set(-1, 0.4, -0.6); scene.add(fill);
+
+const t0 = performance.now();
+const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+
+loader.load(MODEL, async (gltf) => {
+  const loadMs = Math.round(performance.now() - t0);
+  scene.add(gltf.scene);
+
+  const manifest = await fetch('/models/subsystems.json').then((r) => r.json());
+  const lines = [];
+  let missing = 0;
+  const box = new THREE.Box3().setFromObject(gltf.scene);
+  const size = box.getSize(new THREE.Vector3());
+  const centre = box.getCenter(new THREE.Vector3());
+
+  for (const s of manifest.subsystems) {
+    const g = gltf.scene.getObjectByName(s.group);
+    if (!g) { lines.push(`${s.group.padEnd(16)} MISSING`); missing++; continue; }
+    let tris = 0, calls = 0;
+    g.traverse((o) => {
+      if (!o.isMesh) return;
+      calls++;
+      const idx = o.geometry.getIndex();
+      tris += (idx ? idx.count : o.geometry.getAttribute('position').count) / 3;
+    });
+    const b = new THREE.Box3().setFromObject(g);
+    const c = b.getCenter(new THREE.Vector3());
+    lines.push(`${s.group.padEnd(16)} ${String(calls).padStart(4)} mesh ${String(Math.round(tris)).padStart(8)} tri  c=[${c.toArray().map((v) => v.toFixed(3).padStart(7)).join(',')}]`);
+    if (EXPLODE) {
+      const d = s.explodeDir || [0, 0, 0];
+      g.position.set(d[0] * EXPLODE * 0.35, d[1] * EXPLODE * 0.35, d[2] * EXPLODE * 0.35);
+    }
+  }
+
+  if (WIRE) gltf.scene.traverse((o) => { if (o.isMesh) o.material = new THREE.MeshBasicMaterial({ color: 0x222222, wireframe: true }); });
+
+  // ?callouts=1 — overlay models/callouts.json anchors with projected labels, so we can see
+  // whether each anchor actually sits ON its part rather than floating inside the group bbox.
+  if (qs.get('callouts') === '1') {
+    const data = await fetch('/models/callouts.json').then((r) => r.json());
+    const dotGeo = new THREE.SphereGeometry(0.006, 12, 12);
+    const dotMat = new THREE.MeshBasicMaterial({ color: 0x57068C });
+    const anchors = [];
+    for (const [group, list] of Object.entries(data)) {
+      const parent = gltf.scene.getObjectByName(group);
+      for (const { label, position } of list) {
+        const dot = new THREE.Mesh(dotGeo, dotMat);
+        dot.position.fromArray(position);
+        (parent || gltf.scene).add(dot); // ride along with the group when exploded
+        const el = document.createElement('div');
+        el.textContent = label;
+        el.style.cssText = 'position:fixed;font:10px ui-monospace,Consolas,monospace;color:#57068C;' +
+          'text-transform:uppercase;letter-spacing:.05em;pointer-events:none;white-space:nowrap;transform:translate(6px,-50%)';
+        document.body.appendChild(el);
+        anchors.push({ dot, el });
+      }
+    }
+    const pv = new THREE.Vector3();
+    renderer.setAnimationLoop(() => {
+      renderer.render(scene, camera);
+      for (const { dot, el } of anchors) {
+        dot.getWorldPosition(pv).project(camera);
+        el.style.left = `${(pv.x * 0.5 + 0.5) * innerWidth}px`;
+        el.style.top = `${(-pv.y * 0.5 + 0.5) * innerHeight}px`;
+        el.style.display = pv.z > 1 ? 'none' : 'block';
+      }
+    });
+  }
+
+  // frame the model
+  const r = size.length() / 2;
+  const dir = { iso: [1, 0.55, 1], front: [0, 0.15, 1], side: [1, 0.15, 0], top: [0.001, 1, 0.001] }[VIEW] || [1, 0.55, 1];
+  const v = new THREE.Vector3(...dir).normalize().multiplyScalar(r / Math.sin((camera.fov * Math.PI / 180) / 2) * 0.62);
+  camera.position.copy(centre).add(v);
+  controls.target.copy(centre);
+  controls.update();
+
+  renderer.render(scene, camera);
+  const info = renderer.info.render;
+  document.getElementById('hud').textContent =
+    `${MODEL}\nloaded ${loadMs} ms   draw calls ${info.calls}   triangles ${info.triangles.toLocaleString()}\n` +
+    `bbox size [${size.toArray().map((x) => x.toFixed(3)).join(', ')}]  centre [${centre.toArray().map((x) => x.toFixed(3)).join(', ')}]\n\n` +
+    lines.join('\n');
+  window.__stats = { ok: missing === 0, missing, loadMs, calls: info.calls, triangles: info.triangles, groups: lines };
+  window.__ready = true;
+}, undefined, (e) => {
+  document.body.innerHTML = `<div id="err">LOAD FAILED\n${MODEL}\n\n${e?.message || e}</div>`;
+  window.__stats = { ok: false, error: String(e?.message || e) };
+  window.__ready = true;
+});
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+renderer.setAnimationLoop(() => renderer.render(scene, camera));
+</script>
+</body>
+</html>

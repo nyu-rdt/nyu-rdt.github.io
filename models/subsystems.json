@@ -1,0 +1,51 @@
+{
+  "$comment": "REV 3 contract. FOUR groups (user directive): EE Box, Locomotion, Excavation, Deposition. Pipeline reparents source nodes into these groups (node name = 'group'); matchPatterns test L1 names, matchPatternsL2 test deeper descendants (shallowest match wins, never descend into a matched subtree), REMAINDER catches the rest. explodeDir must read as ONE coherent radial explosion from the locomotion base: things lift AWAY from the rolling chassis, no sideways drift that reads as random. Systems page iterates this array generically.",
+  "modelFile": "models/luna-rover.glb",
+  "draftModelFile": "models/luna-rover.draft.glb",
+  "sourceModelFile": "models/source/LunaRover_ae_fixed.glb",
+  "subsystems": [
+    {
+      "group": "sys_locomotion",
+      "title": "Locomotion",
+      "role": "Four chain-driven wheel modules and the frame they carry — the rolling base everything mounts to.",
+      "matchPatterns": ["^Wheel Assembly", "^MAX Planetary", "Hex Shaft", "Hex Bearing", "Roller Chain", "^am-4791", "^Chain Dust Cover", "^Encoder Dustcover", "REMAINDER"],
+      "explodeDir": [0, 0, 0],
+      "anchor": true,
+      "teams": ["Mechanical Engineering", "Electrical Engineering"]
+    },
+    {
+      "group": "sys_excavation",
+      "title": "Excavation",
+      "role": "Bucket-ladder digging system that harvests lunar regolith.",
+      "matchPatterns": ["^Excav 1.4", "^Excav Horizontal Support", "^Load Cell Top Assembly", "^Realsense Holder", "^Realsense Mount"],
+      "explodeDir": [-0.45, 1, 0],
+      "teams": ["Mechanical Engineering", "Software Engineering"]
+    },
+    {
+      "group": "sys_deposition",
+      "title": "Deposition",
+      "role": "Collects and dumps harvested regolith into the sieve.",
+      "matchPatterns": ["^Integration Assembly"],
+      "explodeDir": [0.45, 0.85, 0],
+      "teams": ["Mechanical Engineering"]
+    },
+    {
+      "group": "sys_ee_box",
+      "title": "Electrical Box",
+      "role": "Power distribution, motor controllers, and the wiring that animates every subsystem.",
+      "matchPatterns": [],
+      "matchPatternsL2": ["^EE Box"],
+      "explodeDir": [0.1, 1.35, 0],
+      "teams": ["Electrical Engineering"]
+    }
+  ],
+  "closing": {
+    "title": "Mission Operations",
+    "role": "Luna comes back together under the people who run the program.",
+    "teams": ["Faculty", "Team Leadership", "Project Management"]
+  },
+  "pipeline": {
+    "targets": { "finalMaxBytes": 12582912, "maxDrawCalls": 60, "maxTriangles": 900000 },
+    "notes": "PERF PASS (user reports lag): tighten simplify ratios (chains harder, structural to ~0.3), consider pruning sub-2cm fasteners. Strip transmission; force the two BLEND materials OPAQUE this time (no depth-sort risk, parts are never ghosted anymore). Perception folds into excavation (mast rides the ladder frame); chassis remainder folds into locomotion."
+  }
+}
